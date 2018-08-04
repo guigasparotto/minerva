@@ -1,46 +1,81 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Dashboard {
 
+    //Define web elements at class level
     private WebDriver driver;
 
+    @FindBy(xpath = "//span[contains(text(),'Order history and details')]")
+    private WebElement historyButton;
+
+    @FindBy(xpath = "//span[contains(text(),'My credit slips')]")
+    private WebElement creditSlipsButton;
+
+    @FindBy(xpath = "//span[contains(text(),'My addresses')]")
+    private WebElement addressesButton;
+
+    @FindBy(xpath = "//span[contains(text(),'My personal information')]")
+    private WebElement personalInfoButton;
+
+    @FindBy(xpath = "//span[contains(text(),'My wishlists')]")
+    private WebElement wishlistsButton;
+
+    @FindBy(xpath = "//a[@title='Home']//span")
+    private WebElement homeButton;
+
+    @FindBy(xpath = "//h1[@class='page-heading']")
+    private WebElement myAccountText;
+
+    @FindBy(xpath = "//p[@class='info-account']")
+    private WebElement welcomeText;
+
+    // Constructor initialises the state of the driver
     public Dashboard(WebDriver driver) {
         this.driver = driver;
+
+        // Initialise the web elements
+        PageFactory.initElements(driver, this);
+    }
+
+    public String title() {
+        return driver.getTitle();
     }
 
     public void orderHistory() {
-        driver.findElement(By.xpath("//span[contains(text(),'Order history and details')]")).click();
+        historyButton.click();
     }
 
     public void myCreditSlips() {
-        driver.findElement(By.xpath("//span[contains(text(),'My credit slips')]")).click();
+        creditSlipsButton.click();
     }
 
     public void myAdresses() {
-        driver.findElement(By.xpath("//span[contains(text(),'My addresses')]")).click();
+        addressesButton.click();
     }
 
     public void myPersonalInfo() {
-        driver.findElement(By.xpath("//span[contains(text(),'My personal information')]")).click();
+        personalInfoButton.click();
     }
 
     public void myWishlists() {
-        driver.findElement(By.xpath("//span[contains(text(),'My wishlists')]")).click();
+        wishlistsButton.click();
     }
 
-    public void homeButton() {
-        driver.findElement(By.xpath("//a[@title='Home']//span")).click();
+    public void home() {
+        homeButton.click();
     }
 
     public String myAccount() {
-        return driver.findElement(By.xpath("//h1[@class='page-heading']")).getText();
+        return myAccountText.getText();
     }
 
     public String welcomeMessage() {
-        return driver.findElement(By.xpath("//p[@class='info-account']")).getText();
+        return welcomeText.getText();
     }
 
 }
