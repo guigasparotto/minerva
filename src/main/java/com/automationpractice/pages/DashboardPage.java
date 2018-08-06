@@ -1,14 +1,11 @@
-package pages;
+package com.automationpractice.pages;
 
-import org.openqa.selenium.WebDriver;
+import com.automationpractice.base.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Dashboard {
-
-    //Define web elements at class level
-    private WebDriver driver;
+public class DashboardPage extends TestBase {
 
     @FindBy(xpath = "//span[contains(text(),'Order history and details')]")
     private WebElement historyButton;
@@ -25,7 +22,7 @@ public class Dashboard {
     @FindBy(xpath = "//span[contains(text(),'My wishlists')]")
     private WebElement wishlistsButton;
 
-    @FindBy(xpath = "//a[@title='Home']//span")
+    @FindBy(xpath = "//a[@loginPageTitle='Home']//span")
     private WebElement homeButton;
 
     @FindBy(xpath = "//h1[@class='page-heading']")
@@ -35,9 +32,7 @@ public class Dashboard {
     private WebElement welcomeText;
 
     // Constructor initialises the state of the driver
-    public Dashboard(WebDriver driver) {
-        this.driver = driver;
-
+    public DashboardPage() {
         // Initialise the web elements
         PageFactory.initElements(driver, this);
     }

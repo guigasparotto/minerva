@@ -1,16 +1,14 @@
-package pages;
+package com.automationpractice.pages;
 
+import com.automationpractice.base.TestBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends TestBase {
 
-    //Define web elements at class level
-    private WebDriver driver;
-
+    // Define web elements at class level
     @FindBy(id="email")
     private WebElement emailBox;
 
@@ -20,7 +18,7 @@ public class LoginPage {
     @FindBy(id="SubmitLogin")
     private WebElement loginButton;
 
-    @FindBy(xpath = "//a[@title='Recover your forgotten password']")
+    @FindBy(xpath = "//a[@loginPageTitle='Recover your forgotten password']")
     private WebElement forgotButton;
 
     @FindBy(id = "email_create")
@@ -29,17 +27,24 @@ public class LoginPage {
     @FindBy(id = "SumbitCreate")
     private WebElement createAccButton;
 
-    // Constructor initialises the state of the driver
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+    @FindBy(xpath = "//img[@class='logo img-responsive']")
+    private WebElement pageLogo;
 
+    // Constructor
+    public LoginPage() {
         // Initialises the web elements
         PageFactory.initElements(driver, this);
+
+        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
     }
 
-    // Steps
-    public String title() {
+    // Initialising the page objects
+    public String loginPageTitle() {
         return driver.getTitle();
+    }
+
+    public boolean isLogoDisplayed() {
+        return pageLogo.isDisplayed();
     }
 
     public void setLoginEmail(String email) {
@@ -79,10 +84,17 @@ public class LoginPage {
     }
 
     // Actions
-    public void login(String email, String password) {
+    public DashboardPage login(String email, String password) {
         setLoginEmail(email);
         setLoginPassword(password);
         clickSignIn();
+        return new DashboardPage();
+    }
+
+    public CreateAccountPage createAccount(String newEmail) {
+        setNewAccountEmail(newEmail);
+        clickCreate();
+        return new CreateAccountPage(driver);
     }
 
 }
