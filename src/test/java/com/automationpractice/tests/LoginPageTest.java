@@ -2,10 +2,17 @@ package com.automationpractice.tests;
 
 import com.automationpractice.base.TestBase;
 import com.automationpractice.pages.DashboardPage;
+import com.automationpractice.pages.HomePage;
+import com.automationpractice.pages.HomePage;
 import com.automationpractice.pages.LoginPage;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static com.automationpractice.constants.UserCredentialsConstants.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import static com.automationpractice.constants.UserCredentialsConstants.*;
 import static org.testng.Assert.*;
@@ -13,8 +20,12 @@ import static org.testng.Assert.*;
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
-//    private HomePage homePage;
+    private HomePage homePage;
     private DashboardPage dashboardPage;
+    private String validEmail = "gdadald3@gmail.com";
+    private String invalidEmail = "gdadald4@gmail.com";
+    private String validPassword = "123456";
+    private String invalidPassword = "1234";
     private static int counter = 10;
 
     public LoginPageTest() {
@@ -24,8 +35,9 @@ public class LoginPageTest extends TestBase {
     @BeforeMethod
     public void SetUp() {
         initialisation();
+        //homePage = new HomePage();
+        //loginPage = homePage.clickSignInLink();
         loginPage = new LoginPage();
-//        homePage.signIn();
     }
 
     @Test(priority = 1)
@@ -79,6 +91,7 @@ public class LoginPageTest extends TestBase {
 
 
     @AfterMethod
+    // Runs after every test method in the class
     public void tearDown() {
         if (driver != null)
             driver.quit();
