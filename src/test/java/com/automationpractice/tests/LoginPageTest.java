@@ -62,7 +62,7 @@ public class LoginPageTest extends TestBase {
     public void loginFailedInvalidPasswordTest() {
         loginPage.doLogin(USERNAME_VALID, PASSWORD_INVALID);
 
-        //assertTrue(loginPage.errorAlert().contains("There is 1 error"));
+        assertTrue(loginPage.errorAlert().contains("There is 1 error"));
         assertTrue(loginPage.invalidPasswordMsg().contains("Invalid password."));
         assertTrue(loginPage.loginPageTitle().contains("Login - My Store"));
     }
