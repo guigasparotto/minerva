@@ -34,8 +34,6 @@ public class LoginPage extends TestBase {
     public LoginPage() {
         // Initialises the web elements
         PageFactory.initElements(driver, this);
-
-        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
     }
 
     // Initialising the page objects

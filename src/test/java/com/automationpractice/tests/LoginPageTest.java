@@ -2,6 +2,7 @@ package com.automationpractice.tests;
 
 import com.automationpractice.base.TestBase;
 import com.automationpractice.pages.DashboardPage;
+import com.automationpractice.pages.HomePage;
 import com.automationpractice.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +12,7 @@ import org.testng.annotations.Test;
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
-//    private HomePage homePage;
+    private HomePage homePage;
     private DashboardPage dashboardPage;
     private String validEmail = "gdadald3@gmail.com";
     private String invalidEmail = "gdadald4@gmail.com";
@@ -26,8 +27,8 @@ public class LoginPageTest extends TestBase {
     @BeforeMethod
     public void SetUp() {
         initialisation();
-        loginPage = new LoginPage();
-//        homePage.signIn();
+        homePage = new HomePage();
+        loginPage = homePage.clickSignInLink();
     }
 
     @Test(priority = 1)
