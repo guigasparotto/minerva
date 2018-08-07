@@ -55,20 +55,20 @@ public class LoginPage extends TestBase {
         passwordBox.sendKeys(password);
     }
 
-    public void clickSignIn() {
-        loginButton.click();
-    }
-
-    public void clickForgotPassword() {
-        forgotButton.click();
-    }
-
     public void setNewAccountEmail(String email) {
         newAccountEmail.sendKeys(email);
     }
 
     public void clickCreate() {
         createAccButton.click();
+    }
+
+    public void clickSignIn() {
+        loginButton.click();
+    }
+
+    public void clickForgotPassword() {
+        forgotButton.click();
     }
 
     public String errorAlert() {
@@ -84,7 +84,7 @@ public class LoginPage extends TestBase {
     }
 
     // Actions
-    public DashboardPage login(String email, String password) {
+    public DashboardPage doLogin(String email, String password) {
         setLoginEmail(email);
         setLoginPassword(password);
         clickSignIn();

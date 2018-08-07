@@ -12,7 +12,7 @@ public class HomePage extends TestBase {
     private WebDriver driver;
 
     @FindBy(xpath = "//a[@loginPageTitle='Log in to your customer account']")
-    WebElement signInButton;
+    private WebElement signInButton;
 
     public HomePage() {
         // Initialises the web elements
@@ -23,7 +23,7 @@ public class HomePage extends TestBase {
         driver.findElement(By.xpath("//a[@loginPageTitle='Log in to your customer account']")).click();
     }
 
-    // Clicks in the Sign In button and navigates to the login page
+    // Clicks in the Sign In button and navigates to the doLogin page
     public LoginPage signIn() {
         signInButton.click();
         return new LoginPage();
