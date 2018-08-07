@@ -41,10 +41,13 @@ public class HomePage extends TestBase {
             "/ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li[3]/a[1]")
     WebElement tshirtsLink;
 
-
     public HomePage() {
         // Initialises the web elements
         PageFactory.initElements(driver, this);
+    }
+
+    public String getHomePageTitle() {
+        return this.getHomePageTitle();
     }
 
     // Clicks in the Sign In button and navigates to the login page

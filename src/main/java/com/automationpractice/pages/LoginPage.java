@@ -18,7 +18,7 @@ public class LoginPage extends TestBase {
     @FindBy(id="SubmitLogin")
     private WebElement loginButton;
 
-    @FindBy(xpath = "//a[@loginPageTitle='Recover your forgotten password']")
+    @FindBy(xpath = "//a[@getLoginPageTitle='Recover your forgotten password']")
     private WebElement forgotButton;
 
     @FindBy(id = "email_create")
@@ -37,7 +37,7 @@ public class LoginPage extends TestBase {
     }
 
     // Initialising the page objects
-    public String loginPageTitle() {
+    public String getLoginPageTitle() {
         return driver.getTitle();
     }
 

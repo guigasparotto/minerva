@@ -22,7 +22,7 @@ public class DashboardPage extends TestBase {
     @FindBy(xpath = "//span[contains(text(),'My wishlists')]")
     private WebElement wishlistsButton;
 
-    @FindBy(xpath = "//a[@loginPageTitle='Home']//span")
+    @FindBy(xpath = "//a[@getLoginPageTitle='Home']//span")
     private WebElement homeButton;
 
     @FindBy(xpath = "//h1[@class='page-heading']")

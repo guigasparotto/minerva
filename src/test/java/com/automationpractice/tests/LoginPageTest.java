@@ -37,9 +37,9 @@ public class LoginPageTest extends TestBase {
         // Enter login information
         loginPage.login(validEmail, validPassword);
 
-        String title = loginPage.loginPageTitle();
+        String title = loginPage.getLoginPageTitle();
 
-        // Verifies if the page loginPageTitle is correct
+        // Verifies if the page getLoginPageTitle is correct
         Assert.assertEquals(title, "My account - My Store");
     }
 
@@ -74,8 +74,8 @@ public class LoginPageTest extends TestBase {
         Assert.assertTrue(loginPage.errorAlert().contains("There is 1 error"));
         Assert.assertTrue(loginPage.invalidUserMsg().contains("Authentication failed."));
 
-        // Verifies if the page loginPageTitle is correct - remains the same
-        Assert.assertTrue(loginPage.loginPageTitle().contains("Login - My Store"));
+        // Verifies if the page getLoginPageTitle is correct - remains the same
+        Assert.assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
     @Test(priority = 6)
@@ -88,8 +88,8 @@ public class LoginPageTest extends TestBase {
         Assert.assertTrue(loginPage.errorAlert().contains("There is 1 error"));
         Assert.assertTrue(loginPage.invalidPasswordMsg().contains("Invalid password."));
 
-        // Verifies if the page loginPageTitle is correct - remains the same
-        Assert.assertTrue(loginPage.loginPageTitle().contains("Login - My Store"));
+        // Verifies if the page getLoginPageTitle is correct - remains the same
+        Assert.assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
     @Test
