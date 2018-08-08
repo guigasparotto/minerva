@@ -3,9 +3,7 @@ package com.automationpractice.tests;
 import com.automationpractice.base.TestBase;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
-import com.automationpractice.pages.HomePage;
 import com.automationpractice.pages.LoginPage;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,18 +12,11 @@ import static com.automationpractice.constants.UserCredentialsConstants.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import static com.automationpractice.constants.UserCredentialsConstants.*;
-import static org.testng.Assert.*;
-
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
     private HomePage homePage;
     private DashboardPage dashboardPage;
-    private String validEmail = "gdadald3@gmail.com";
-    private String invalidEmail = "gdadald4@gmail.com";
-    private String validPassword = "123456";
-    private String invalidPassword = "1234";
     private static int counter = 10;
 
     public LoginPageTest() {
@@ -35,15 +26,14 @@ public class LoginPageTest extends TestBase {
     @BeforeMethod
     public void SetUp() {
         initialisation();
-        //homePage = new HomePage();
-        //loginPage = homePage.clickSignInLink();
-        loginPage = new LoginPage();
+        homePage = new HomePage();
+        loginPage = homePage.clickSignInLink();
     }
 
     @Test(priority = 1)
     public void loginPageTitleTest() {
         loginPage.doLogin(USERNAME_VALID, PASSWORD_VALID);
-        assertEquals(loginPage.loginPageTitle(), "My account - My Store");
+        assertEquals(loginPage.getLoginPageTitle(), "My account - My Store");
     }
 
     @Test(priority = 2)
@@ -67,7 +57,7 @@ public class LoginPageTest extends TestBase {
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
         assertTrue(loginPage.invalidUserMsg().contains("Authentication failed."));
-        assertTrue(loginPage.loginPageTitle().contains("Login - My Store"));
+        assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
     @Test(priority = 6)
@@ -76,7 +66,7 @@ public class LoginPageTest extends TestBase {
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
         assertTrue(loginPage.invalidPasswordMsg().contains("Invalid password."));
-        assertTrue(loginPage.loginPageTitle().contains("Login - My Store"));
+        assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
     @Test

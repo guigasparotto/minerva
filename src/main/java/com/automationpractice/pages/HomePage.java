@@ -24,7 +24,7 @@ public class HomePage extends TestBase {
     }
 
     // Clicks in the Sign In button and navigates to the login page
-    public LoginPage signIn() {
+    public LoginPage clickSignInLink() {
         signInButton.click();
         return new LoginPage();
     }
