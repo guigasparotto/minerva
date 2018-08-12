@@ -73,12 +73,8 @@ public class LoginPage extends TestBase {
         return driver.findElement(By.xpath("//p[contains(text(),'There is 1 error')]")).getText();
     }
 
-    public String invalidUserMsg() {
+    public String authenticationFailedMsg() {
         return driver.findElement(By.xpath("//li[contains(text(),'Authentication failed.')]")).getText();
-    }
-
-    public String invalidPasswordMsg() {
-        return driver.findElement(By.xpath("//li[contains(text(),'Invalid password.')]")).getText();
     }
 
     // Actions

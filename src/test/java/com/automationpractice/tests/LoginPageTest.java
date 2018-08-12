@@ -56,7 +56,7 @@ public class LoginPageTest extends TestBase {
         loginPage.doLogin(USERNAME_INVALID, PASSWORD_VALID);
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
-        assertTrue(loginPage.invalidUserMsg().contains("Authentication failed."));
+        assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
         assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
@@ -65,7 +65,7 @@ public class LoginPageTest extends TestBase {
         loginPage.doLogin(USERNAME_VALID, PASSWORD_INVALID);
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
-        assertTrue(loginPage.invalidPasswordMsg().contains("Invalid password."));
+        assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
         assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
