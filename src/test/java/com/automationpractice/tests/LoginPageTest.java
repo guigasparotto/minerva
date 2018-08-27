@@ -1,9 +1,11 @@
 package com.automationpractice.tests;
 
 import com.automationpractice.base.TestBase;
+import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
 import com.automationpractice.pages.LoginPage;
+import com.automationpractice.util.TestUtil;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,7 +19,7 @@ public class LoginPageTest extends TestBase {
     private LoginPage loginPage;
     private HomePage homePage;
     private DashboardPage dashboardPage;
-    private static int counter = 10;
+    private CreateAccountPage createAccountPage;
 
     public LoginPageTest() {
         super();
@@ -69,16 +71,13 @@ public class LoginPageTest extends TestBase {
         assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
-    @Test
-    public void createAccountSuccessfulTest() {
-        loginPage.setNewAccountEmail(createEmail());
+    @Test(priority = 7)
+    // Failing - gets heading from previous page
+    public void navigateToCreateAccountPageTest() {
+        loginPage.setNewAccountEmail(TestUtil.createRandomEmail());
+        createAccountPage = loginPage.clickCreateAccount();
+        assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
     }
-
-    private String createEmail() {
-        this.counter ++;
-        return "gdadald" + counter + "@gmail.com";
-    }
-
 
     @AfterMethod
     // Runs after every test method in the class

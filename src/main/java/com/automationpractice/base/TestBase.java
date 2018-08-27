@@ -15,13 +15,6 @@ public class TestBase {
     public static WebDriver driver;
     public static Properties prop;
 
-//    @Before
-//    // Runs before every test method in the class
-//    public void setUp() {
-//        // Creates a DriverFactory object and opens the chrome browser
-//        driver = DriverFactory.open("chrome");
-//    }
-
     public TestBase() {
         try {
             prop = new Properties();

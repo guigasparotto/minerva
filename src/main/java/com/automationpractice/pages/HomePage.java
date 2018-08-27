@@ -47,7 +47,7 @@ public class HomePage extends TestBase {
     }
 
     public String getHomePageTitle() {
-        return this.getHomePageTitle();
+        return driver.getTitle();
     }
 
     // Clicks in the Sign In button and navigates to the login page

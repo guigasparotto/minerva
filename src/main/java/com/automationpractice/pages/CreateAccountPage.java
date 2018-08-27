@@ -1,25 +1,25 @@
 package com.automationpractice.pages;
 
-import org.openqa.selenium.WebDriver;
+import com.automationpractice.base.TestBase;
+import com.automationpractice.enums.Title;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class CreateAccountPage {
+public class CreateAccountPage extends TestBase {
 
-    WebDriver driver;
-
-    @FindBy(xpath = "//h1[@class='page-heading']")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/h1[1]")
     private WebElement pageHeading;
 
     @FindBy(xpath = "//h3[contains(text(),'Your personal information')]")
     private WebElement pageSubheading;
 
     @FindBy(id="id_gender1")
-    private WebElement maleRadioButton;
+    private WebElement mrRadioButton;
 
     @FindBy(id="id_gender2")
-    private WebElement femaleRadioButton;
+    private WebElement mrsRadioButton;
 
     @FindBy(id="customer_firstname")
     private WebElement firstNameField;
@@ -73,7 +73,7 @@ public class CreateAccountPage {
     private WebElement stateDropDown;
 
     @FindBy(id="postcode")
-    private WebElement postCodeField;
+    private WebElement postalCodeField;
 
     @FindBy(id="id_country")
     private WebElement countryDropDown;
@@ -90,19 +90,29 @@ public class CreateAccountPage {
     @FindBy(id="alias")
     private WebElement addressAliasField;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/form[1]/div[4]/button[1]/span[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/form[1]/div[4]/button[1]/span[1]")
     private WebElement registerButton;
 
-    public CreateAccountPage(WebDriver driver) {
-        this.driver = driver;
+    // Constructor
+    public CreateAccountPage() {
+        // Initialises the web elements
+        PageFactory.initElements(driver, this);
+    }
+
+    public String getPageHeading() {
+        return this.pageHeading.getText();
+    }
+
+    public String getPageSubheading() {
+        return pageSubheading.getText();
     }
 
     public void setGenderMale() {
-        maleRadioButton.click();
+        mrRadioButton.click();
     }
 
     public void setGenderFemale() {
-        femaleRadioButton.click();
+        mrsRadioButton.click();
     }
 
     public void setFirstName(String firstName) {
@@ -121,19 +131,143 @@ public class CreateAccountPage {
         passwordField.sendKeys(password);
     }
 
-    public void setBirthDay(String day) {
+    public void setBirthDay(int day) {
         Select select = new Select(daysDropDown);
-        select.selectByVisibleText(day);
+        select.selectByIndex(day);
     }
 
-    public void setBirthMonth(String month) {
+    public void setBirthMonth(int month) {
         Select select = new Select(monthsDropDown);
-        select.selectByVisibleText(month);
+        select.selectByValue(Integer.toString(month));
     }
 
-    public void setBirthYear(String year) {
+    public void setBirthYear(int year) {
         Select select = new Select(yearsDropDown);
-        select.selectByVisibleText(year);
+        select.selectByValue(Integer.toString(year));
     }
 
-}
+    public void clickSignUpForNewsletterBox() {
+        newsletterCheckbox.click();
+    }
+
+    public void clickReceiveSpecialOffersBox() {
+        receiveOffersCheckbox.click();
+    }
+
+    public void setAddressFirstName(String firstName) {
+        addressFirstName.clear();
+        addressFirstName.sendKeys(firstName);
+    }
+
+    public void setAddressLastName(String lastName) {
+        addressLastName.clear();
+        addressLastName.sendKeys(lastName);
+    }
+
+    public void setCompanyField(String company) {
+        if(company != null) {
+            companyField.sendKeys(company);
+        }
+    }
+
+    public void setAddressField(String address) {
+        addressField.sendKeys(address);
+    }
+
+    public void setAddressCompField(String complement) {
+        if (complement != null) {
+            addressCompField.sendKeys(complement);
+
+        }
+    }
+
+    public void setCityField(String city) {
+        cityField.sendKeys(city);
+    }
+
+    public void setStateDropDown(String state) {
+        Select select = new Select(stateDropDown);
+        select.selectByVisibleText(state);
+    }
+
+    public void setPostalCodeField(String postalCode) {
+        postalCodeField.sendKeys(postalCode);
+    }
+
+    public void setCountryDropDown(String country) {
+        Select select = new Select(countryDropDown);
+        select.selectByVisibleText(country);
+    }
+
+    public void setAdditionalInfoField(String info) {
+        if (info != null) {
+            additionalInfoField.sendKeys(info);
+        }
+    }
+
+    public void setHomePhoneField(String homePhone) {
+        if(homePhone != null) {
+            homePhoneField.sendKeys(homePhone);
+        }
+    }
+
+    public void setMobilePhoneField(String mobile) {
+        mobilePhoneField.sendKeys(mobile);
+    }
+
+    public void setAddressAliasField(String alias) {
+        addressAliasField.clear();
+        addressAliasField.sendKeys(alias);
+    }
+
+    public DashboardPage clickRegisterButton() {
+        registerButton.click();
+        return new DashboardPage();
+    }
+
+    // Actions
+
+    public void enterPersonalInformation(Title title, String firstName, String lastName, String password,
+                                        int birthDay, int birthMonth, int birthYear, boolean receiveNewsletter, boolean receiveOffers) {
+        if(title == Title.MR) {
+            setGenderMale();
+        } else {
+            setGenderFemale();
+        }
+
+        setFirstName(firstName);
+        setlastName(lastName);
+//        setEmail(email);
+        setPassword(password);
+        setBirthDay(birthDay);
+        setBirthMonth(birthMonth);
+        setBirthYear(birthYear);
+
+        if(receiveNewsletter == true) {
+            clickSignUpForNewsletterBox();
+        }
+
+        if(receiveOffers == true) {
+            clickReceiveSpecialOffersBox();
+        }
+    }
+
+    public void enterAddressInformation(String firstName, String lastName, String company, String address, String addressComp,
+                                        String city, String state, String postalCode, String country, String additionalInfo,
+                                        String homePhone, String mobile, String addressAlias) {
+        setAddressFirstName(firstName);
+        setAddressLastName(lastName);
+        setCompanyField(company);
+        setAddressField(address);
+        setAddressCompField(addressComp);
+        setCityField(city);
+        setStateDropDown(state);
+        setPostalCodeField(postalCode);
+        setCountryDropDown(country);
+        setAdditionalInfoField(additionalInfo);
+        setHomePhoneField(homePhone);
+        setMobilePhoneField(mobile);
+        setAddressAliasField(addressAlias);
+    }
+
+ }

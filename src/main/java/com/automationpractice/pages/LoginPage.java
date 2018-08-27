@@ -9,6 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends TestBase {
 
     // Define web elements at class level
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/h1[1]")
+    private WebElement pageHeading;
+
     @FindBy(id="email")
     private WebElement emailBox;
 
@@ -24,7 +28,7 @@ public class LoginPage extends TestBase {
     @FindBy(id = "email_create")
     private WebElement newAccountEmail;
 
-    @FindBy(id = "SumbitCreate")
+    @FindBy(id = "SubmitCreate")
     private WebElement createAccButton;
 
     @FindBy(xpath = "//img[@class='logo img-responsive']")
@@ -36,7 +40,10 @@ public class LoginPage extends TestBase {
         PageFactory.initElements(driver, this);
     }
 
-    // Initialising the page objects
+    public String getPageHeading() {
+        return pageHeading.getText();
+    }
+
     public String getLoginPageTitle() {
         return driver.getTitle();
     }
@@ -57,8 +64,9 @@ public class LoginPage extends TestBase {
         newAccountEmail.sendKeys(email);
     }
 
-    public void clickCreate() {
+    public CreateAccountPage clickCreateAccount() {
         createAccButton.click();
+        return new CreateAccountPage();
     }
 
     public void clickSignIn() {
@@ -87,8 +95,8 @@ public class LoginPage extends TestBase {
 
     public CreateAccountPage createAccount(String newEmail) {
         setNewAccountEmail(newEmail);
-        clickCreate();
-        return new CreateAccountPage(driver);
+        clickCreateAccount();
+        return new CreateAccountPage();
     }
 
 }
