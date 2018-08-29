@@ -2,6 +2,7 @@ package com.automationpractice.pages;
 
 import com.automationpractice.base.TestBase;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -30,6 +31,9 @@ public class HomePage extends TestBase {
 
     @FindBy(xpath = "//a[@title='Women']")
     WebElement womenLink;
+
+    @FindBy(xpath = "//a[@title='Tops']")
+    WebElement topsLink;
 
     @FindBy(xpath = "//body[@id='index']/div[@id='page']/div[@class='header-container']" +
             "/header[@id='header']/div/div[@class='container']/div[@class='row']/div[@id='block_top_menu']" +
@@ -62,26 +66,31 @@ public class HomePage extends TestBase {
         return new SearchPage();
     }
 
-    public ContactUsPage clickContactUsLink() {
+    public ContactUsPage clickOnContactUsLink() {
         contactUsLink.click();
         return new ContactUsPage();
     }
 
-    public WomenPage clickWomenLink() {
+    public WomenPage clickOnWomenLink() {
         womenLink.click();
         return new WomenPage();
     }
 
-    public DressesPage clickDressesLink() {
+    public DressesPage clickOnDressesLink() {
         dressesLink.click();
         return new DressesPage();
     }
 
-    public TshirtsPage clickTshirtsLink() {
+    public TshirtsPage clickOnTshirtsLink() {
         tshirtsLink.click();
         return new TshirtsPage();
     }
 
+    public void clickOnTopsLink() {
+        Actions action = new Actions(driver);
+        action.moveToElement(womenLink).build().perform();
+        topsLink.click();
+    }
 
 
 }

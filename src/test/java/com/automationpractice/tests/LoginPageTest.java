@@ -8,6 +8,7 @@ import com.automationpractice.pages.LoginPage;
 import com.automationpractice.util.TestUtil;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static com.automationpractice.constants.UserCredentialsConstants.*;
@@ -20,6 +21,8 @@ public class LoginPageTest extends TestBase {
     private HomePage homePage;
     private DashboardPage dashboardPage;
     private CreateAccountPage createAccountPage;
+
+    String sheetName = "credentials";
 
     public LoginPageTest() {
         super();
@@ -78,6 +81,23 @@ public class LoginPageTest extends TestBase {
         createAccountPage = loginPage.clickCreateAccount();
         assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
     }
+
+
+
+    @DataProvider
+    public Object[][] getTestData() {
+        Object data[][] = TestUtil.getTestData(sheetName);
+        return data;
+    }
+
+    @Test(priority = 10, dataProvider = "getTestData")
+    public void loginSuccessfulTestWithDataProvider(String email, String password) {
+        dashboardPage = loginPage.doLogin(email, password);
+
+        assertEquals(dashboardPage.welcomeMessage(), "Welcome to your account. " +
+                "Here you can manage all of your personal information and orders.");
+    }
+
 
     @AfterMethod
     // Runs after every test method in the class
