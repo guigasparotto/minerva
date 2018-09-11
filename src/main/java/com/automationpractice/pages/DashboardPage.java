@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage extends TestBase {
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/h1[1]")
+    private WebElement pageHeading;
+
     @FindBy(xpath = "//span[contains(text(),'Order history and details')]")
     private WebElement historyButton;
 
@@ -73,4 +76,7 @@ public class DashboardPage extends TestBase {
         return welcomeText.getText();
     }
 
+    public String getPageHeading() {
+        return pageHeading.getText();
+    }
 }

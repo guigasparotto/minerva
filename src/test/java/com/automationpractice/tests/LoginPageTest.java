@@ -1,32 +1,28 @@
 package com.automationpractice.tests;
 
 import com.automationpractice.base.TestBase;
+import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
-import com.automationpractice.pages.HomePage;
 import com.automationpractice.pages.LoginPage;
-import org.testng.Assert;
+import com.automationpractice.util.TestUtil;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static com.automationpractice.constants.UserCredentialsConstants.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import static com.automationpractice.constants.UserCredentialsConstants.*;
-import static org.testng.Assert.*;
-
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
     private HomePage homePage;
     private DashboardPage dashboardPage;
-    private String validEmail = "gdadald3@gmail.com";
-    private String invalidEmail = "gdadald4@gmail.com";
-    private String validPassword = "123456";
-    private String invalidPassword = "1234";
-    private static int counter = 10;
+    private CreateAccountPage createAccountPage;
+
+    String sheetName = "credentials";
 
     public LoginPageTest() {
         super();
@@ -35,15 +31,14 @@ public class LoginPageTest extends TestBase {
     @BeforeMethod
     public void SetUp() {
         initialisation();
-        //homePage = new HomePage();
-        //loginPage = homePage.clickSignInLink();
-        loginPage = new LoginPage();
+        homePage = new HomePage();
+        loginPage = homePage.clickSignInLink();
     }
 
     @Test(priority = 1)
     public void loginPageTitleTest() {
         loginPage.doLogin(USERNAME_VALID, PASSWORD_VALID);
-        assertEquals(loginPage.loginPageTitle(), "My account - My Store");
+        assertEquals(loginPage.getLoginPageTitle(), "My account - My Store");
     }
 
     @Test(priority = 2)
@@ -66,8 +61,8 @@ public class LoginPageTest extends TestBase {
         loginPage.doLogin(USERNAME_INVALID, PASSWORD_VALID);
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
-        assertTrue(loginPage.invalidUserMsg().contains("Authentication failed."));
-        assertTrue(loginPage.loginPageTitle().contains("Login - My Store"));
+        assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
+        assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
     @Test(priority = 6)
@@ -75,18 +70,32 @@ public class LoginPageTest extends TestBase {
         loginPage.doLogin(USERNAME_VALID, PASSWORD_INVALID);
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
-        assertTrue(loginPage.invalidPasswordMsg().contains("Invalid password."));
-        assertTrue(loginPage.loginPageTitle().contains("Login - My Store"));
+        assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
+        assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
     }
 
-    @Test
-    public void createAccountSuccessfulTest() {
-        loginPage.setNewAccountEmail(createEmail());
+    @Test(priority = 7)
+    // Failing - gets heading from previous page
+    public void navigateToCreateAccountPageTest() {
+        loginPage.setNewAccountEmail(TestUtil.createRandomEmail());
+        createAccountPage = loginPage.clickCreateAccount();
+        assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
     }
 
-    private String createEmail() {
-        this.counter ++;
-        return "gdadald" + counter + "@gmail.com";
+
+
+    @DataProvider
+    public Object[][] getTestData() {
+        Object data[][] = TestUtil.getTestData(sheetName);
+        return data;
+    }
+
+    @Test(priority = 10, dataProvider = "getTestData")
+    public void loginSuccessfulTestWithDataProvider(String email, String password) {
+        dashboardPage = loginPage.doLogin(email, password);
+
+        assertEquals(dashboardPage.welcomeMessage(), "Welcome to your account. " +
+                "Here you can manage all of your personal information and orders.");
     }
 
 
