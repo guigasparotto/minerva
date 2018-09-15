@@ -83,8 +83,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            <state relative-caret-position="512">
+              <caret line="31" selection-start-line="31" selection-end-line="36" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -610,9 +610,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_Users_guigasparotto_Documents_selenium_webdriver_minerva_src_resources_testng_xml - 2018.09.13 at 20h 31m 54s.xml">
-      <configuration name="/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="CreateAccountPageTest_createNewUserTest - 2018.09.15 at 11h 07m 10s.xml">
       <configuration name="CreateAccountPageTest.createNewUserTest" configurationId="TestNG" />
     </history-entry>
@@ -638,6 +635,9 @@
       <configuration name="/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" configurationId="TestNG" />
     </history-entry>
     <history-entry file="_Users_guigasparotto_Documents_selenium_webdriver_minerva_src_resources_testng_xml - 2018.09.15 at 22h 21m 42s.xml">
+      <configuration name="/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="_Users_guigasparotto_Documents_selenium_webdriver_minerva_src_resources_testng_xml - 2018.09.15 at 22h 23m 43s.xml">
       <configuration name="/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -1147,8 +1147,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="512">
+          <caret line="31" selection-start-line="31" selection-end-line="36" selection-end-column="25" />
         </state>
       </provider>
     </entry>
