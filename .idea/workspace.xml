@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="238a8277-f726-4982-9e18-bbbfd9c20d93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/testdata/automationData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/testdata/~$automationData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/testng.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/testng_sanity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReporterNG.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/util/WebEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/automationpractice/util/WebEventListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/automationpractice/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/base/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/automationpractice/util/TestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/automationpractice/util/TestUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/automationpractice/tests/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/automationpractice/tests/LoginPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/automationpractice/pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automationpractice/pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/testng_sanity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/testng_sanity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/automationpractice/base/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automationpractice/base/TestBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/automationpractice/pages/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automationpractice/pages/LoginPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/automationpractice/util/TestUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/automationpractice/util/TestUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/automationpractice/tests/LoginPageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/automationpractice/tests/LoginPageTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,22 +37,37 @@
       <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/LoginPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+            <state relative-caret-position="551">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1171#1172#0" expanded="true" />
                 <element signature="e#1215#1216#0" expanded="true" />
+                <element signature="e#1428#1429#0" expanded="true" />
+                <element signature="e#1468#1469#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="State.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/enums/State.java">
+      <file leaf-file-name="WebEventListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/util/WebEventListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+            <state relative-caret-position="1056">
+              <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#646#647#0" expanded="true" />
+                <element signature="e#1332#1333#0" expanded="true" />
+                <element signature="e#1402#1403#0" expanded="true" />
+                <element signature="e#1457#1458#0" expanded="true" />
+                <element signature="e#1526#1527#0" expanded="true" />
+                <element signature="e#1585#1586#0" expanded="true" />
+                <element signature="e#1654#1655#0" expanded="true" />
+                <element signature="e#1712#1713#0" expanded="true" />
+                <element signature="e#1780#1781#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,23 +75,17 @@
       <file leaf-file-name="CreateAccountPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/CreateAccountPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="233" column="16" lean-forward="true" selection-start-line="233" selection-start-column="16" selection-end-line="233" selection-end-column="16" />
-              <folding>
-                <element signature="e#2596#2597#0" expanded="true" />
-                <element signature="e#2640#2641#0" expanded="true" />
-                <element signature="e#2925#2926#0" expanded="true" />
-                <element signature="e#2975#2976#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="437">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginPageTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginPageTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/LoginPageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+            <state relative-caret-position="445">
+              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,20 +93,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Title.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/enums/Title.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="399">
+              <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestUtil.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/util/TestUtil.java">
+      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testng_sanity.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/testng_sanity.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExtentReporterNG.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReporterNG.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1139">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,20 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MethodInvocationHelper.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3.jar!/org/testng/internal/MethodInvocationHelper.class">
+      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/config/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserCredentialsConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/constants/UserCredentialsConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="19">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -125,20 +144,8 @@
       <file leaf-file-name="CreateAccountPageTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/CreateAccountPageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="39" column="44" lean-forward="true" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePageTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/HomePageTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="434">
+              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,8 +158,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -175,16 +182,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/enums/Months.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/enums/State.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/DashboardPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/base/TestBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/automationpractice/tests/CreateAccountPageTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/automationpractice/tests/HomePageTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/LoginPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/CreateAccountPage.java" />
-        <option value="$PROJECT_DIR$/src/resources/testng.xml" />
-        <option value="$PROJECT_DIR$/src/resources/testng_sanity.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/HomePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/automationpractice/tests/LoginPageTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/base/TestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/util/WebEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/util/TestUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/CreateAccountPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/pages/LoginPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReportListener.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReporterNG.java" />
+        <option value="$PROJECT_DIR$/src/resources/testng.xml" />
+        <option value="$PROJECT_DIR$/src/resources/testng_sanity.xml" />
       </list>
     </option>
   </component>
@@ -208,7 +219,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1623" />
+    <option name="width" value="1523" />
     <option name="height" value="1439" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -219,6 +230,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -295,6 +308,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="automationpractice" type="462c0819:PsiDirectoryNode" />
+              <item name="ExtentReportListener" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br.com.minerva.automation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="minerva" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automationpractice" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -344,6 +366,11 @@
             </path>
             <path>
               <item name="br.com.minerva.automation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="minerva" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br.com.minerva.automation" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -351,8 +378,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,7 +406,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.LoginPageTest.loginSuccessfulTestWithDataProvider">
+  <component name="RunManager" selected="TestNG./Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -401,7 +426,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="HomePageTest.loginPageTitleTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateAccountPageTest.createNewUserTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="br.com.minerva.automation" />
       <extension name="coverage">
         <pattern>
@@ -413,7 +438,36 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="com.automationpractice.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.automationpractice.tests.HomePageTest" />
+      <option name="MAIN_CLASS_NAME" value="com.automationpractice.tests.CreateAccountPageTest" />
+      <option name="METHOD_NAME" value="createNewUserTest" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="LoginPageTest.loginPageTitleTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="br.com.minerva.automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.automationpractice.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.automationpractice.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.automationpractice.tests.LoginPageTest" />
       <option name="METHOD_NAME" value="loginPageTitleTest" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -444,35 +498,6 @@
       <option name="PACKAGE_NAME" value="com.automationpractice.tests" />
       <option name="MAIN_CLASS_NAME" value="com.automationpractice.tests.LoginPageTest" />
       <option name="METHOD_NAME" value="loginSuccessfulTestWithDataProvider" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="LoginPageTest.navigateToCreateAccountPageTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="br.com.minerva.automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.automationpractice.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.automationpractice.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.automationpractice.tests.LoginPageTest" />
-      <option name="METHOD_NAME" value="navigateToCreateAccountPageTest" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -564,18 +589,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.com.automationpractice.tests" />
-      <item itemvalue="TestNG.HomePageTest.loginPageTitleTest" />
-      <item itemvalue="TestNG.LoginPageTest.navigateToCreateAccountPageTest" />
       <item itemvalue="TestNG./Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" />
       <item itemvalue="TestNG.LoginPageTest.loginSuccessfulTestWithDataProvider" />
+      <item itemvalue="TestNG.CreateAccountPageTest.createNewUserTest" />
+      <item itemvalue="TestNG.LoginPageTest.loginPageTitleTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginPageTest.loginSuccessfulTestWithDataProvider" />
         <item itemvalue="TestNG./Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" />
+        <item itemvalue="TestNG.LoginPageTest.loginPageTitleTest" />
+        <item itemvalue="TestNG.CreateAccountPageTest.createNewUserTest" />
+        <item itemvalue="TestNG.LoginPageTest.loginSuccessfulTestWithDataProvider" />
         <item itemvalue="TestNG.com.automationpractice.tests" />
-        <item itemvalue="TestNG.LoginPageTest.navigateToCreateAccountPageTest" />
-        <item itemvalue="TestNG.HomePageTest.loginPageTitleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -593,27 +618,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 21h 54m 56s.xml">
-      <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 21h 56m 03s.xml">
-      <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 22h 03m 56s.xml">
-      <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 22h 06m 22s.xml">
-      <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 22h 07m 02s.xml">
-      <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 22h 13m 03s.xml">
-      <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 22h 37m 58s.xml">
-      <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 22h 39m 40s.xml">
       <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
     </history-entry>
@@ -623,10 +627,30 @@
     <history-entry file="LoginPageTest_loginSuccessfulTestWithDataProvider - 2018.08.29 at 23h 01m 36s.xml">
       <configuration name="LoginPageTest.loginSuccessfulTestWithDataProvider" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="_Users_guigasparotto_Documents_selenium_webdriver_minerva_src_resources_testng_xml - 2018.09.13 at 20h 31m 54s.xml">
+      <configuration name="/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateAccountPageTest_createNewUserTest - 2018.09.15 at 11h 07m 10s.xml">
+      <configuration name="CreateAccountPageTest.createNewUserTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateAccountPageTest_createNewUserTest - 2018.09.15 at 16h 03m 55s.xml">
+      <configuration name="CreateAccountPageTest.createNewUserTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateAccountPageTest_createNewUserTest - 2018.09.15 at 16h 04m 49s.xml">
+      <configuration name="CreateAccountPageTest.createNewUserTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateAccountPageTest_createNewUserTest - 2018.09.15 at 16h 05m 14s.xml">
+      <configuration name="CreateAccountPageTest.createNewUserTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LoginPageTest_loginPageTitleTest - 2018.09.15 at 16h 07m 48s.xml">
+      <configuration name="LoginPageTest.loginPageTitleTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LoginPageTest_loginPageTitleTest - 2018.09.15 at 18h 30m 25s.xml">
+      <configuration name="LoginPageTest.loginPageTitleTest" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1623" height="1439" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1523" height="1439" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -636,25 +660,25 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50030434" side_tool="true" weight="0.3661865" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32991803" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996957" visible="true" weight="0.3661865" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996957" visible="true" weight="0.3661865" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4996772" visible="true" weight="0.24478178" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38665655" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4996772" visible="true" weight="0.26468602" />
       <window_info id="Structure" order="1" sideWeight="0.50032276" side_tool="true" weight="0.2930328" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3813495" />
       <window_info id="Favorites" order="2" sideWeight="0.50032276" side_tool="true" weight="0.2930328" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3813495" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32957393" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38665655" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -666,14 +690,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/automationpractice/util/TestUtil.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager>
@@ -744,34 +760,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/config/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/LoginPageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/base/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/AddressesPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/CreateAccountPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -850,6 +838,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1171#1172#0" expanded="true" />
             <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#1468#1469#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -992,44 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/config/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/base/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/testng_sanity.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1044,35 +996,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/HomePageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        <state relative-caret-position="285">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/CreateAccountPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="233" column="16" lean-forward="true" selection-start-line="233" selection-start-column="16" selection-end-line="233" selection-end-column="16" />
-          <folding>
-            <element signature="e#2596#2597#0" expanded="true" />
-            <element signature="e#2640#2641#0" expanded="true" />
-            <element signature="e#2925#2926#0" expanded="true" />
-            <element signature="e#2975#2976#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1215#1216#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1094,17 +1021,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/constants/UserCredentialsConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/CreateAccountPageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="39" column="44" lean-forward="true" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -1115,10 +1032,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/LoginPageTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/base/TestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+        <state relative-caret-position="751">
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1127,8 +1044,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/util/TestUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="48" column="62" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
+        <state relative-caret-position="428">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/CreateAccountPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/CreateAccountPageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenshots/1537024068408.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/pages/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#1468#1469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReportListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/util/WebEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#1332#1333#0" expanded="true" />
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1526#1527#0" expanded="true" />
+            <element signature="e#1585#1586#0" expanded="true" />
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1712#1713#0" expanded="true" />
+            <element signature="e#1780#1781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReporterNG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/config/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/testng_sanity.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/automationpractice/tests/LoginPageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
