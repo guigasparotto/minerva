@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="238a8277-f726-4982-9e18-bbbfd9c20d93" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="238a8277-f726-4982-9e18-bbbfd9c20d93" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="31" selection-start-line="31" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="189">
+              <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -107,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExtentReporterNG.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ExtentReporterNG.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReporterNG.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1139">
@@ -610,9 +607,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateAccountPageTest_createNewUserTest - 2018.09.15 at 11h 07m 10s.xml">
-      <configuration name="CreateAccountPageTest.createNewUserTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="CreateAccountPageTest_createNewUserTest - 2018.09.15 at 16h 03m 55s.xml">
       <configuration name="CreateAccountPageTest.createNewUserTest" configurationId="TestNG" />
     </history-entry>
@@ -640,10 +634,12 @@
     <history-entry file="_Users_guigasparotto_Documents_selenium_webdriver_minerva_src_resources_testng_xml - 2018.09.15 at 22h 23m 43s.xml">
       <configuration name="/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="_Users_guigasparotto_Documents_selenium_webdriver_minerva_src_resources_testng_xml - 2018.09.15 at 22h 53m 35s.xml">
+      <configuration name="/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/resources/testng.xml" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1523" height="1439" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1099,16 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReporterNG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/config/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1147,8 +1133,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="31" selection-start-line="31" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="189">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/automationpractice/ExtentReportListener/ExtentReporterNG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
