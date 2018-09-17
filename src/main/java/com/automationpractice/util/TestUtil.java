@@ -21,7 +21,7 @@ public class TestUtil extends TestBase {
     public static long IMPLICIT_WAIT = 10;
 
     public static String TESTDATA_SHEET_PATH = "/Users/guigasparotto/Documents/selenium_webdriver/minerva/" +
-            "src/main/java/com/automationpractice/testdata/automationData.xlsx";
+            "src/main/java/com/automationpractice/testdata/automationData.csv";
 
     static Workbook book;
     static Sheet sheet;
