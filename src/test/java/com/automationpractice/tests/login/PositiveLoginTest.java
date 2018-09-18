@@ -40,16 +40,16 @@ public class PositiveLoginTest extends LoginPageSetup {
         assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
     }
 
-    @DataProvider
-    public Object[][] getTestData() {
-        Object data[][] = TestUtil.getTestData(sheetName);
-        return data;
-    }
-
-    @Test(dataProvider = "getTestData")
-    public void loginSuccessfulTestWithDataProvider(String email, String password) {
-        dashboardPage = loginPage.doLogin(email, password);
-        assertEquals(dashboardPage.welcomeMessage(), "Welcome to your account. " +
-                "Here you can manage all of your personal information and orders.");
-    }
+//    @DataProvider
+//    public Object[][] getTestData() {
+//        Object data[][] = TestUtil.getTestData(sheetName);
+//        return data;
+//    }
+//
+//    @Test(dataProvider = "getTestData")
+//    public void loginSuccessfulTestWithDataProvider(String email, String password) {
+//        dashboardPage = loginPage.doLogin(email, password);
+//        assertEquals(dashboardPage.welcomeMessage(), "Welcome to your account. " +
+//                "Here you can manage all of your personal information and orders.");
+//    }
 }
