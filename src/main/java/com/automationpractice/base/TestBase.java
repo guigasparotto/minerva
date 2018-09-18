@@ -2,7 +2,9 @@ package com.automationpractice.base;
 
 import com.automationpractice.util.DriverFactory;
 import com.automationpractice.util.TestUtil;
+import com.automationpractice.util.WebEventListener;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,6 +16,10 @@ public class TestBase {
 
     public static WebDriver driver;
     public static Properties prop;
+
+    // Elements created in order to implement better logging
+    public static EventFiringWebDriver e_driver;
+    public static WebEventListener eventListener;
 
     public TestBase() {
         try {
@@ -32,7 +38,13 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
         driver = DriverFactory.open(browserName);
 
-        driver.manage().window().maximize();
+        e_driver = new EventFiringWebDriver(driver);
+        // Nou creating object of EventListenerHandler to register it with EventFiringWebDriver
+        eventListener = new WebEventListener();
+        e_driver.register(eventListener);
+        driver = e_driver;
+
+//        driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
