@@ -1,0 +1,367 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 8505452082,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefiniton.SetUp()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Login with valid credentials",
+        "description": "",
+        "id": "login;login-with-valid-credentials;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 88691669,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefiniton.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 83780860,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "LoginStepDefiniton.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 114172557,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters \"gdadald3@gmail.com\" in the username field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "gdadald3@gmail.com",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefiniton.user_enters_username_in_the_username_field(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 62090562,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enters \"123456\" in the password field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "123456",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefiniton.user_enters_password_in_the_password_field(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1752308649,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks in the signin button",
+            "match": {
+              "location": "LoginStepDefiniton.user_clicks_in_the_signin_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4383617,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user accesses dashboard",
+            "match": {
+              "location": "LoginStepDefiniton.user_accesses_dashboard()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 28738510,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "welcome message is displayed",
+            "match": {
+              "location": "LoginStepDefiniton.welcome_message_is_displayed()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 8266525679,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefiniton.SetUp()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "Login with valid credentials",
+        "description": "",
+        "id": "login;login-with-valid-credentials;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 93027816,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefiniton.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5046066,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is on login page",
+            "match": {
+              "location": "LoginStepDefiniton.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 121842431,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters \"gdadald9@gmail.com\" in the username field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "gdadald9@gmail.com",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefiniton.user_enters_username_in_the_username_field(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 67903069,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enters \"123456\" in the password field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "123456",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefiniton.user_enters_password_in_the_password_field(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1209195869,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clicks in the signin button",
+            "match": {
+              "location": "LoginStepDefiniton.user_clicks_in_the_signin_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4129074,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user accesses dashboard",
+            "match": {
+              "location": "LoginStepDefiniton.user_accesses_dashboard()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 28073967,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "welcome message is displayed",
+            "match": {
+              "location": "LoginStepDefiniton.welcome_message_is_displayed()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 7914090404,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefiniton.SetUp()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "Login with invalid credentials",
+        "description": "",
+        "id": "login;login-with-invalid-credentials;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 82695508,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefiniton.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4987245,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user is on login page",
+            "match": {
+              "location": "LoginStepDefiniton.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 119237736,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "user enters \"gdadald3@gmail.com\" in the username field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "gdadald3@gmail.com",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefiniton.user_enters_username_in_the_username_field(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 60251445,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user enters \"1234\" in the password field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1234",
+                  "offset": 13
+                }
+              ],
+              "location": "LoginStepDefiniton.user_enters_password_in_the_password_field(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 746068609,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "user clicks in the signin button",
+            "match": {
+              "location": "LoginStepDefiniton.user_clicks_in_the_signin_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10813778516,
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//li[contains(text(),\u0027Authentication failed.\u0027)]\"}\n  (Session info: chrome\u003d69.0.3497.100)\n  (Driver info: chromedriver\u003d2.41.578706 (5f725d1b4f0a4acbf5259df887244095596231db),platform\u003dMac OS X 10.13.6 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.13.0\u0027, revision: \u00272f0d292\u0027, time: \u00272018-06-25T15:24:21.231Z\u0027\nSystem info: host: \u0027Guilhermes-MacBook-Pro.local\u0027, ip: \u0027192.168.0.37\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.13.6\u0027, java.version: \u00271.8.0_77\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578706 (5f725d1b4f0a4a..., userDataDir: /var/folders/zg/9b3_1zn573j...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62398}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}\nSession ID: 5750a5c875323875803bfd07ec820d2c\n*** Element info: {Using\u003dxpath, value\u003d//li[contains(text(),\u0027Authentication failed.\u0027)]}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)\n\tat com.sun.proxy.$Proxy18.findElement(Unknown Source)\n\tat org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)\n\tat com.automationpractice.pages.LoginPage.authenticationFailedMsg(LoginPage.java:96)\n\tat cucumber.runner.LoginStepDefiniton.invalid_password_message_is_displayed(LoginStepDefiniton.java:69)\n\tat ✽.Then invalid password message is displayed(Login.feature:23)\n",
+              "status": "failed"
+            },
+            "line": 23,
+            "name": "invalid password message is displayed",
+            "match": {
+              "location": "LoginStepDefiniton.invalid_password_message_is_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "Login.feature"
+  }
+]

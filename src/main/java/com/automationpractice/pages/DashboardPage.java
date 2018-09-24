@@ -25,7 +25,7 @@ public class DashboardPage extends TestBase {
     @FindBy(xpath = "//span[contains(text(),'My wishlists')]")
     private WebElement wishlistsButton;
 
-    @FindBy(xpath = "//a[@getLoginPageTitle='Home']//span")
+    @FindBy(xpath = "//a[@getPageTitle='Home']//span")
     private WebElement homeButton;
 
     @FindBy(xpath = "//h1[@class='page-heading']")
@@ -40,7 +40,7 @@ public class DashboardPage extends TestBase {
         PageFactory.initElements(driver, this);
     }
 
-    public String title() {
+    public String getPageTitle() {
         return driver.getTitle();
     }
 

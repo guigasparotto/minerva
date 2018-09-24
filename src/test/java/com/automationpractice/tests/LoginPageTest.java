@@ -38,7 +38,7 @@ public class LoginPageTest extends TestBase {
     @Test(priority = 1)
     public void loginPageTitleTest() {
         loginPage.doLogin(USERNAME_VALID, PASSWORD_VALID);
-        assertEquals(loginPage.getLoginPageTitle(), "My account - My Store");
+        assertEquals(loginPage.getPageTitle(), "My account - My Store");
     }
 
     @Test(priority = 2)
@@ -62,7 +62,7 @@ public class LoginPageTest extends TestBase {
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
         assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
-        assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
+        assertTrue(loginPage.getPageTitle().contains("Login - My Store"));
     }
 
     @Test(priority = 6)
@@ -71,7 +71,7 @@ public class LoginPageTest extends TestBase {
 
         assertTrue(loginPage.errorAlert().contains("There is 1 error"));
         assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
-        assertTrue(loginPage.getLoginPageTitle().contains("Login - My Store"));
+        assertTrue(loginPage.getPageTitle().contains("Login - My Store"));
     }
 
     @Test(priority = 7)

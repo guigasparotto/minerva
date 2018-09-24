@@ -11,7 +11,7 @@
         <classes>
             <!--class name="com.automationpractice.tests.CreateAccountPageTest" /-->
             <class name="com.automationpractice.tests.HomePageTest" />
-            <class name="com.automationpractice.tests.LoginPageTest" />
+            <class name="com.automationpractice.tests.login.PositiveLoginTest" />
         </classes>
     </test>
 </suite>

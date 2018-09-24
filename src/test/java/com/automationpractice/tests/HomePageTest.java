@@ -21,7 +21,7 @@ public class HomePageTest extends TestBase {
     public void loginPageTitleTest() {
         String title = homePage.getHomePageTitle();
 
-        // Verifies if the page getLoginPageTitle is correct
+        // Verifies if the page getPageTitle is correct
         Assert.assertEquals(title, "My Store");
     }
 

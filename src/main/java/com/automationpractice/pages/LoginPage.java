@@ -28,7 +28,7 @@ public class LoginPage extends TestBase {
     @CacheLookup
     private WebElement loginButton;
 
-    @FindBy(xpath = "//a[@getLoginPageTitle='Recover your forgotten password']")
+    @FindBy(xpath = "//a[@getPageTitle='Recover your forgotten password']")
     @CacheLookup
     private WebElement forgotButton;
 
@@ -54,7 +54,7 @@ public class LoginPage extends TestBase {
         return pageHeading.getText();
     }
 
-    public String getLoginPageTitle() {
+    public String getPageTitle() {
         return driver.getTitle();
     }
 
@@ -79,8 +79,9 @@ public class LoginPage extends TestBase {
         return new CreateAccountPage();
     }
 
-    public void clickSignIn() {
+    public DashboardPage clickSignIn() {
         loginButton.click();
+        return new DashboardPage();
     }
 
     public void clickForgotPassword() {
@@ -92,7 +93,7 @@ public class LoginPage extends TestBase {
     }
 
     public String authenticationFailedMsg() {
-        return driver.findElement(By.xpath("//li[contains(text(),'Authentication failed.')]")).getText();
+        return driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ol[1]/li[1]")).getText();
     }
 
     // Actions
