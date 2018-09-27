@@ -1,3 +1,4 @@
+#@Selenium
 Feature: Login
 
 Scenario Outline: Login with valid credentials
@@ -24,4 +25,4 @@ Scenario Outline: Login with invalid credentials
 
 Examples:
   | username | password |
-  | gdadald3@gmail.com | 1234 |
+  | gdadald3@gmail.com | 123455 |

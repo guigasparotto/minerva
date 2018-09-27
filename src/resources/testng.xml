@@ -9,6 +9,8 @@
     
     <test name="Test Automation" >
         <classes>
+            <class name="com.automationpractice.tests.HomePageTest" />
+            <class name="com.automationpractice.tests.CreateAccountPageTest" />
             <class name="com.automationpractice.tests.LoginPageTest" />
         </classes>
     </test>

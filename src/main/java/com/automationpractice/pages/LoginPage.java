@@ -93,7 +93,7 @@ public class LoginPage extends TestBase {
     }
 
     public String authenticationFailedMsg() {
-        return driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ol[1]/li[1]")).getText();
+        return driver.findElement(By.xpath("//li[contains(text(),'Authentication failed.')]")).getText();
     }
 
     // Actions

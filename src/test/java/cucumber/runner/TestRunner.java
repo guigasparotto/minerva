@@ -1,9 +1,11 @@
 package cucumber.runner;
 
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
-import org.testng.annotations.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/test/java/resources/features",
 //        glue = "/Users/guigasparotto/Documents/selenium_webdriver/minerva/src/test/java/cucumber/LoginStepDefiniton.java",
@@ -14,7 +16,7 @@ import org.testng.annotations.Test;
         // tags = {"~@SmokeTest", "~@RegressionTest", "~@End2End"}
 )
 
-@Test
+//@Test
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }

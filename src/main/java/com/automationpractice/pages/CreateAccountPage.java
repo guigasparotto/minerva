@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CreateAccountPage extends TestBase {
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/h1[1]")
+    @FindBy(xpath = "//h1[contains(text(),'Create an account')]")
     private WebElement pageHeading;
 
     @FindBy(xpath = "//h3[contains(text(),'Your personal information')]")
