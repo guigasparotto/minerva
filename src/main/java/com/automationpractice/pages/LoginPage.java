@@ -96,6 +96,14 @@ public class LoginPage extends TestBase {
         return driver.findElement(By.xpath("//li[contains(text(),'Authentication failed.')]")).getText();
     }
 
+    public String emptyEmailMsg() {
+        return driver.findElement(By.xpath("//li[contains(text(),'An email address required.')]")).getText();
+    }
+
+    public String emptyPasswordMsg() {
+        return driver.findElement(By.xpath("//li[contains(text(),'Password is required.')]")).getText();
+    }
+
     // Actions
     public DashboardPage doLogin(String email, String password) {
         setLoginEmail(email);

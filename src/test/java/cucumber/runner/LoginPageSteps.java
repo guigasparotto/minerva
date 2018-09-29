@@ -1,9 +1,11 @@
 package cucumber.runner;
 
 import com.automationpractice.base.TestBase;
+import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
 import com.automationpractice.pages.LoginPage;
+import com.automationpractice.util.TestUtil;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -13,11 +15,12 @@ import cucumber.api.java.en.When;
 
 import static org.testng.Assert.assertEquals;
 
-public class LoginStepDefiniton extends TestBase {
+public class LoginPageSteps extends TestBase {
 
     private HomePage homePage;
     private LoginPage loginPage;
     private DashboardPage dashboardPage;
+    private CreateAccountPage createAccountPage;
 
     @Before
     public void SetUp() {
@@ -70,4 +73,28 @@ public class LoginStepDefiniton extends TestBase {
         assertEquals(loginPage.authenticationFailedMsg(), "Authentication failed.");
     }
 
+    @When("^user enters a new email in the email address field$")
+    public void user_enters_a_new_email_in_the_email_address_field() {
+        loginPage.setNewAccountEmail(TestUtil.createRandomEmail());
+    }
+
+    @When("^user clicks in the create an account button$")
+    public void user_clicks_in_the_create_an_account_button() {
+        createAccountPage = loginPage.clickCreateAccount();
+    }
+
+    @Then("^dashboard page is loaded$")
+    public void dashboard_page_is_loaded() {
+        assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
+    }
+
+    @Then("^empty email message is displayed$")
+    public void empty_email_message_is_displayed() {
+        assertEquals(loginPage.emptyEmailMsg(), "An email address required.");
+    }
+
+    @Then("^empty password message is displayed$")
+    public void emptyPasswordMessageIsDisplayed() {
+        assertEquals(loginPage.emptyPasswordMsg(), "Password is required.");
+    }
 }

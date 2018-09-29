@@ -79,7 +79,6 @@ public class LoginPageTest extends TestBase {
     public void navigateToCreateAccountPageTest() {
         loginPage.setNewAccountEmail(TestUtil.createRandomEmail());
         createAccountPage = loginPage.clickCreateAccount();
-        assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
     }
 
 
