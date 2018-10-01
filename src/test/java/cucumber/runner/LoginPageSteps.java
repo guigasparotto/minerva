@@ -83,7 +83,7 @@ public class LoginPageSteps extends TestBase {
         createAccountPage = loginPage.clickCreateAccount();
     }
 
-    @Then("^dashboard page is loaded$")
+    @Then("^create an account page is loaded$")
     public void dashboard_page_is_loaded() {
         assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
     }
