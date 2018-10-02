@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage extends TestBase {
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/h1[1]")
+    @FindBy(xpath = "//span[contains(text(),'My account')]")
     private WebElement pageHeading;
 
     @FindBy(xpath = "//span[contains(text(),'Order history and details')]")

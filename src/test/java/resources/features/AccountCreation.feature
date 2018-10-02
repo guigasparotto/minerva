@@ -1,7 +1,7 @@
 Feature: Account Creation
 
   Scenario: Create an account
-    Given create an account page is loaded
+    Given user is on create an account page
     When user enters their personal information
       | title | firstName | lastName  | password  | birthDay  | birthMonth  | birthYear | newsLetters | offers  |
       | Mr    | John      | Doe       | 123456    | 2         | 3           | 1990      | true        | true    |

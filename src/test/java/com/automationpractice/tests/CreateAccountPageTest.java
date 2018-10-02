@@ -41,7 +41,7 @@ public class CreateAccountPageTest extends TestBase {
         createAccountPage.enterAddressInformation("Joe", "Doe", null, "Road 11", "25", "New York", "New York", "18900",
                 "United States", null, null, "55580025", "address001");
         dashboardPage = createAccountPage.clickRegisterButton();
-        assertEquals(dashboardPage.getPageHeading(), "MY ACCOUNT");
+        assertEquals(dashboardPage.getPageHeading(), "My account");
     }
 
 
