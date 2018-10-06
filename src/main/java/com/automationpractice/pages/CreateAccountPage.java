@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Map;
+
 public class CreateAccountPage extends TestBase {
 
     @FindBy(xpath = "//h1[contains(text(),'Create an account')]")
@@ -107,6 +109,14 @@ public class CreateAccountPage extends TestBase {
         return pageSubheading.getText();
     }
 
+    public void setTitle(String title) {
+        if(title.equalsIgnoreCase("Mr")) {
+            setGenderMale();
+        } else if(title.equalsIgnoreCase("Mrs")) {
+            setGenderFemale();
+        }
+    }
+
     public void setGenderMale() {
         mrRadioButton.click();
     }
@@ -153,6 +163,19 @@ public class CreateAccountPage extends TestBase {
     public void clickReceiveSpecialOffersBox() {
         receiveOffersCheckbox.click();
     }
+
+    public void setNewsletterCheckbox(Boolean option) {
+        if(option == true) {
+            clickSignUpForNewsletterBox();
+        }
+    }
+
+    public void setReceiveOffersCheckbox(Boolean option) {
+        if(option == true) {
+            clickReceiveSpecialOffersBox();
+        }
+    }
+
 
     public void setAddressFirstName(String firstName) {
         addressFirstName.clear();
@@ -225,30 +248,53 @@ public class CreateAccountPage extends TestBase {
         return new DashboardPage();
     }
 
-    // Actions
 
     public void enterPersonalInformation(Title title, String firstName, String lastName, String password,
                                         int birthDay, int birthMonth, int birthYear, boolean receiveNewsletter, boolean receiveOffers) {
         if(title == Title.MR) {
             setGenderMale();
-        } else {
+        } else if(title == Title.MRS){
             setGenderFemale();
         }
 
         setFirstName(firstName);
         setlastName(lastName);
-//        setEmail(email);
         setPassword(password);
         setBirthDay(birthDay);
         setBirthMonth(birthMonth);
         setBirthYear(birthYear);
 
-        if(receiveNewsletter == true) {
-            clickSignUpForNewsletterBox();
+        setNewsletterCheckbox(receiveNewsletter);
+        setReceiveOffersCheckbox(receiveOffers);
+    }
+
+    public void enterPersonalInformation(Map<String, String> personalInfo) {
+        Map<String, String> data = personalInfo;
+
+        if(data.get("title").equalsIgnoreCase("Mr")) {
+            setGenderMale();
+        } else if(data.get("title").equalsIgnoreCase("Mr")) {
+            setGenderFemale();
         }
 
-        if(receiveOffers == true) {
-            clickReceiveSpecialOffersBox();
+        setFirstName(data.get("firstName"));
+        setlastName(data.get("lastName"));
+        setPassword(data.get("password"));
+
+        if(!data.get("birthDay").isEmpty()) {
+            setBirthDay(Integer.valueOf(data.get("birthDay")));
+        }
+        if(!data.get("birthMonth").isEmpty()) {
+            setBirthMonth(Integer.valueOf(data.get("birthMonth")));
+        }
+        if(!data.get("birthYear").isEmpty()) {
+            setBirthYear(Integer.valueOf(data.get("birthYear")));
+        }
+        if(!data.get("newsletters").isEmpty()) {
+            setReceiveOffersCheckbox(Boolean.valueOf(data.get("newsletters")));
+        }
+        if(!data.get("offers").isEmpty()) {
+            setNewsletterCheckbox(Boolean.valueOf(data.get("offers")));
         }
     }
 

@@ -1,9 +1,10 @@
 Feature: Login
-#  Background: Access the login page
-#    Given: user is on login page
 
-  Scenario Outline: Login with valid credentials
+  Background: User is about to login into the system
     Given user is on login page
+
+  @Login
+  Scenario Outline: Login with valid credentials
     When user enters "<username>" in the username field
     And user enters "<password>" in the password field
     And user clicks in the signin button
@@ -15,8 +16,8 @@ Feature: Login
       | gdadald3@gmail.com | 123456   |
       | gdadald9@gmail.com | 123456   |
 
+  @Login
   Scenario Outline: Login with invalid credentials
-    Given user is on login page
     When user enters "<username>" in the username field
     And user enters "<password>" in the password field
     And user clicks in the signin button
@@ -27,8 +28,8 @@ Feature: Login
       | gdadald3@gmail.com | 123455   |
       |                    |          |
 
+  @Login
   Scenario Outline: Login with empty email
-    Given user is on login page
     When user enters "<password>" in the password field
     And user clicks in the signin button
     Then empty email message is displayed
@@ -38,8 +39,8 @@ Feature: Login
       | 123456    |
       |           |
 
+  @Login
   Scenario Outline: Login with empty password
-    Given user is on login page
     When user enters "<username>" in the username field
     And user clicks in the signin button
     Then empty password message is displayed
@@ -49,8 +50,8 @@ Feature: Login
       | gdadald3@gmail.com  |
       | invalid@invalid.com |
 
+  @Login
   Scenario: Navigate to create account page
-    Given user is on login page
     When user enters a new email in the email address field
     And user clicks in the create an account button
     Then create an account page is loaded

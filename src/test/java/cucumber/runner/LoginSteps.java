@@ -15,21 +15,21 @@ import cucumber.api.java.en.When;
 
 import static org.testng.Assert.assertEquals;
 
-public class LoginPageSteps extends TestBase {
+public class LoginSteps extends TestBase {
 
     private HomePage homePage;
     private LoginPage loginPage;
     private DashboardPage dashboardPage;
     private CreateAccountPage createAccountPage;
 
-    @Before
+    @Before("@Login")
     public void SetUp() {
         initialisation();
         homePage = new HomePage();
         loginPage = homePage.clickSignInLink();
     }
 
-    @After
+    @After("@Login")
     // Runs after every test method in the class
     public void tearDown() {
         if (driver != null)

@@ -1,10 +1,9 @@
 Feature: Account Creation
 
-  Scenario: Create an account
+  @AccountCreation
+  Scenario Outline: Create an account
     Given user is on create an account page
-    When user enters their personal information
-      | title | firstName | lastName  | password  | birthDay  | birthMonth  | birthYear | newsLetters | offers  |
-      | Mr    | John      | Doe       | 123456    | 2         | 3           | 1990      | true        | true    |
+    When user enters their personal information from "<row>"
     And user enters their address information
       | Fields      | Values        |
       | firstName   | John          |
@@ -22,3 +21,32 @@ Feature: Account Creation
       | addrAlias   | Alias         |
     And user clicks in the register button
     Then registration is complete
+
+    Examples:
+      | row |
+      | 1   |
+      | 2   |
+
+   @AccountCreation
+   Scenario: Create an account with required fields only
+     Given user is on create an account page
+     When user enters their personal information
+       | title | firstName | lastName  | password  | birthDay  | birthMonth  | birthYear | newsletters | offers  |
+       |       | John      | Doe       | 123456    |           |             |           |             |         |
+     And user enters their address information
+       | Fields      | Values        |
+       | firstName   | John          |
+       | lastName    | Doe           |
+       | company     |               |
+       | address     | 1 House       |
+       | complement  |               |
+       | city        | LA            |
+       | state       | California    |
+       | postal      | 00000         |
+       | country     | United States |
+       | addInfo     |               |
+       | homePhone   |               |
+       | mobile      | 9992727       |
+       | addrAlias   | Alias         |
+     And user clicks in the register button
+     Then registration is complete

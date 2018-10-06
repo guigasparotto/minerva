@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Random;
+import java.util.*;
 
 public class TestUtil extends TestBase {
 
@@ -34,7 +34,6 @@ public class TestUtil extends TestBase {
         int randomInt = randomGenerator.nextInt(100000);
         return "testEmail" + randomInt + "@gmail.com";
     }
-
 
     public static Object[][] getTestData(String sheetName) {
         FileInputStream file = null;
@@ -60,6 +59,33 @@ public class TestUtil extends TestBase {
                 System.out.println(data[i][j]);
             }
         }
+        return data;
+    }
+
+    public static Map<String, String> getSheetRow(String sheetName, String row) {
+        int sheetRow = new Integer(row);
+
+        FileInputStream file = null;
+        try {
+            file = new FileInputStream(TESTDATA_SHEET_PATH);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            book = WorkbookFactory.create(file);
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        sheet = book.getSheet(sheetName);
+        Map<String, String> data = new HashMap<>();
+
+        for (int j = 0; j < sheet.getRow(0).getLastCellNum(); j++) {
+            data.put(objDefaultFormat.formatCellValue(sheet.getRow(0).getCell(j)),
+                    objDefaultFormat.formatCellValue(sheet.getRow(sheetRow).getCell(j)));
+        }
+
         return data;
     }
 

@@ -1,7 +1,6 @@
 package cucumber.runner;
 
 import com.automationpractice.base.TestBase;
-import com.automationpractice.enums.Title;
 import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
@@ -18,7 +17,7 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
-public class CreateAccountPageSteps extends TestBase {
+public class AccountCreationSteps extends TestBase {
 
     private LoginPage loginPage;
     private HomePage homePage;
@@ -26,7 +25,9 @@ public class CreateAccountPageSteps extends TestBase {
     private CreateAccountPage createAccountPage;
     private String userEmail;
 
-    @Before
+    private final String sheetName = "account_creation";
+
+    @Before("@AccountCreation")
     public void SetUp() {
         initialisation();
         homePage = new HomePage();
@@ -36,7 +37,7 @@ public class CreateAccountPageSteps extends TestBase {
         createAccountPage = loginPage.createAccount(userEmail);
     }
 
-    @After
+    @After("@AccountCreation")
     // Runs after every test method in the class
     public void tearDown() {
         userEmail = null;
@@ -45,26 +46,15 @@ public class CreateAccountPageSteps extends TestBase {
             driver.quit();
     }
 
-
     @Given("^user is on create an account page$")
     public void userIsOnCreateAnAccountPage() {
         assertEquals(createAccountPage.getPageHeading(), "CREATE AN ACCOUNT");
     }
 
-    @When("^user enters their personal information$")
-    public void user_enters_their_personal_information(DataTable personalInfo) {
-        List<List<String>> data = personalInfo.raw();
-        Title title;
 
-        if(data.get(1).get(0).equalsIgnoreCase("Mr")) {
-            title = Title.MR;
-        } else {
-            title = Title.MRS;
-        }
-
-        createAccountPage.enterPersonalInformation(title, data.get(1).get(1), data.get(1).get(2), data.get(1).get(3),
-                Integer.valueOf(data.get(1).get(4)), Integer.valueOf(data.get(1).get(5)), Integer.valueOf(data.get(1).get(6)),
-                Boolean.valueOf(data.get(1).get(7)), Boolean.valueOf(data.get(1).get(8)));
+    @When("^user enters their personal information from \"([^\"]*)\"$")
+    public void userEntersTheirPersonalInformationFrom(String row) {
+        createAccountPage.enterPersonalInformation(TestUtil.getSheetRow(sheetName, row));
     }
 
     @When("^user enters their address information$")
@@ -83,7 +73,8 @@ public class CreateAccountPageSteps extends TestBase {
 
     @Then("^registration is complete$")
     public void registration_is_complete() {
-        assertEquals(dashboardPage.getPageHeading(), "MY ACCOUNT");
+        assertEquals(dashboardPage.getPageHeading(), "My account");
     }
+
 
 }
