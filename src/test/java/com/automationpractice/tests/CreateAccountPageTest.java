@@ -1,6 +1,6 @@
 package com.automationpractice.tests;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BaseTest;
 import com.automationpractice.enums.Title;
 import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class CreateAccountPageTest extends TestBase {
+public class CreateAccountPageTest extends BaseTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
@@ -26,9 +26,9 @@ public class CreateAccountPageTest extends TestBase {
     }
 
     @BeforeMethod
-    public void SetUp() {
+    public void setUp() {
         initialisation();
-        homePage = new HomePage();
+        homePage = new HomePage(driver);
         loginPage = homePage.clickSignInLink();
 
         userEmail = TestUtil.createRandomEmail();
@@ -37,11 +37,32 @@ public class CreateAccountPageTest extends TestBase {
 
     @Test(priority = 1)
     public void createNewUserTest() {
-        createAccountPage.enterPersonalInformation(Title.MR, "Joe", "Doe", "12345", 14, 8, 1990, true, true);
-        createAccountPage.enterAddressInformation("Joe", "Doe", null, "Road 11", "25", "New York", "New York", "18900",
-                "United States", null, null, "55580025", "address001");
+        createAccountPage.enterPersonalInformation(
+                Title.MR,
+                "Joe",
+                "Doe",
+                "12345",
+                14,
+                8,
+                1990,
+                true,
+                true);
+        createAccountPage.enterAddressInformation(
+                "Joe",
+                "Doe",
+                null,
+                "Road 11",
+                "25",
+                "New York",
+                "New York",
+                "18900",
+                "United States",
+                null,
+                null,
+                "55580025",
+                "address001");
         dashboardPage = createAccountPage.clickRegisterButton();
-        assertEquals(dashboardPage.getPageHeading(), "MY ACCOUNT");
+        assertEquals(dashboardPage.getPageHeading(), "My account");
     }
 
 

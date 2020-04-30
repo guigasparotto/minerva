@@ -1,4 +1,4 @@
-package com.automationpractice.base;
+package com.automationpractice;
 
 import com.automationpractice.util.DriverFactory;
 import com.automationpractice.util.TestUtil;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class BaseTest {
 
     public static WebDriver driver;
     public static Properties prop;
@@ -21,7 +21,7 @@ public class TestBase {
     public static EventFiringWebDriver e_driver;
     public static WebEventListener eventListener;
 
-    public TestBase() {
+    public BaseTest() {
         try {
             prop = new Properties();
             FileInputStream ip = new FileInputStream(
@@ -39,7 +39,8 @@ public class TestBase {
         driver = DriverFactory.open(browserName);
 
         e_driver = new EventFiringWebDriver(driver);
-        // Nou creating object of EventListenerHandler to register it with EventFiringWebDriver
+
+        // Now creating object of EventListenerHandler to register it with EventFiringWebDriver
         eventListener = new WebEventListener();
         e_driver.register(eventListener);
         driver = e_driver;

@@ -1,15 +1,18 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
 import com.automationpractice.enums.Title;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class CreateAccountPage extends TestBase {
+import java.util.Map;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/h1[1]")
+public class CreateAccountPage extends BasePage {
+
+    @FindBy(xpath = "//h1[contains(text(),'Create an account')]")
     private WebElement pageHeading;
 
     @FindBy(xpath = "//h3[contains(text(),'Your personal information')]")
@@ -90,12 +93,12 @@ public class CreateAccountPage extends TestBase {
     @FindBy(id="alias")
     private WebElement addressAliasField;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/form[1]/div[4]/button[1]/span[1]")
+    @FindBy(css = "#submitAccount")
     private WebElement registerButton;
 
     // Constructor
-    public CreateAccountPage() {
-        // Initialises the web elements
+    public CreateAccountPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -105,6 +108,14 @@ public class CreateAccountPage extends TestBase {
 
     public String getPageSubheading() {
         return pageSubheading.getText();
+    }
+
+    public void setTitle(String title) {
+        if(title.equalsIgnoreCase("Mr")) {
+            setGenderMale();
+        } else if(title.equalsIgnoreCase("Mrs")) {
+            setGenderFemale();
+        }
     }
 
     public void setGenderMale() {
@@ -153,6 +164,19 @@ public class CreateAccountPage extends TestBase {
     public void clickReceiveSpecialOffersBox() {
         receiveOffersCheckbox.click();
     }
+
+    public void setNewsletterCheckbox(Boolean option) {
+        if(option == true) {
+            clickSignUpForNewsletterBox();
+        }
+    }
+
+    public void setReceiveOffersCheckbox(Boolean option) {
+        if(option == true) {
+            clickReceiveSpecialOffersBox();
+        }
+    }
+
 
     public void setAddressFirstName(String firstName) {
         addressFirstName.clear();
@@ -222,39 +246,89 @@ public class CreateAccountPage extends TestBase {
 
     public DashboardPage clickRegisterButton() {
         registerButton.click();
-        return new DashboardPage();
+        return new DashboardPage(driver);
     }
 
-    // Actions
 
-    public void enterPersonalInformation(Title title, String firstName, String lastName, String password,
-                                        int birthDay, int birthMonth, int birthYear, boolean receiveNewsletter, boolean receiveOffers) {
+    public void enterRequiredPersonalInformation(String firstName, String lastName, String password) {
+        setFirstName(firstName);
+        setlastName(lastName);
+        setPassword(password);
+    }
+
+
+    public void enterPersonalInformation(
+            Title title,
+            String firstName,
+            String lastName,
+            String password,
+            int birthDay,
+            int birthMonth,
+            int birthYear,
+            boolean receiveNewsletter,
+            boolean receiveOffers)
+    {
         if(title == Title.MR) {
             setGenderMale();
-        } else {
+        } else if(title == Title.MRS){
             setGenderFemale();
         }
 
-        setFirstName(firstName);
-        setlastName(lastName);
-//        setEmail(email);
-        setPassword(password);
+        enterRequiredPersonalInformation(firstName, lastName, password);
+
         setBirthDay(birthDay);
         setBirthMonth(birthMonth);
         setBirthYear(birthYear);
 
-        if(receiveNewsletter == true) {
-            clickSignUpForNewsletterBox();
+        setNewsletterCheckbox(receiveNewsletter);
+        setReceiveOffersCheckbox(receiveOffers);
+    }
+
+    public void enterPersonalInformation(Map<String, String> personalInfo) {
+        Map<String, String> data = personalInfo;
+
+        if(data.get("title").equalsIgnoreCase("Mr")) {
+            setGenderMale();
+        } else if(data.get("title").equalsIgnoreCase("Mr")) {
+            setGenderFemale();
         }
 
-        if(receiveOffers == true) {
-            clickReceiveSpecialOffersBox();
+        setFirstName(data.get("firstName"));
+        setlastName(data.get("lastName"));
+        setPassword(data.get("password"));
+
+        if(!data.get("birthDay").isEmpty()) {
+            setBirthDay(Integer.valueOf(data.get("birthDay")));
+        }
+        if(!data.get("birthMonth").isEmpty()) {
+            setBirthMonth(Integer.valueOf(data.get("birthMonth")));
+        }
+        if(!data.get("birthYear").isEmpty()) {
+            setBirthYear(Integer.valueOf(data.get("birthYear")));
+        }
+        if(!data.get("newsletters").isEmpty()) {
+            setReceiveOffersCheckbox(Boolean.valueOf(data.get("newsletters")));
+        }
+        if(!data.get("offers").isEmpty()) {
+            setNewsletterCheckbox(Boolean.valueOf(data.get("offers")));
         }
     }
 
-    public void enterAddressInformation(String firstName, String lastName, String company, String address, String addressComp,
-                                        String city, String state, String postalCode, String country, String additionalInfo,
-                                        String homePhone, String mobile, String addressAlias) {
+    public void enterAddressInformation(
+            String firstName,
+            String lastName,
+            String company,
+            String address,
+            String addressComp,
+            String city,
+            String state,
+            String postalCode,
+            String country,
+            String additionalInfo,
+            String homePhone,
+            String mobile,
+            String addressAlias)
+    {
         setAddressFirstName(firstName);
         setAddressLastName(lastName);
         setCompanyField(company);

@@ -1,13 +1,14 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DashboardPage extends TestBase {
+public class DashboardPage extends BasePage {
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/h1[1]")
+    @FindBy(xpath = "//span[contains(text(),'My account')]")
     private WebElement pageHeading;
 
     @FindBy(xpath = "//span[contains(text(),'Order history and details')]")
@@ -25,7 +26,7 @@ public class DashboardPage extends TestBase {
     @FindBy(xpath = "//span[contains(text(),'My wishlists')]")
     private WebElement wishlistsButton;
 
-    @FindBy(xpath = "//a[@getLoginPageTitle='Home']//span")
+    @FindBy(xpath = "//a[@getPageTitle='Home']//span")
     private WebElement homeButton;
 
     @FindBy(xpath = "//h1[@class='page-heading']")
@@ -34,13 +35,15 @@ public class DashboardPage extends TestBase {
     @FindBy(xpath = "//p[@class='info-account']")
     private WebElement welcomeText;
 
+    private WebDriver driver;
+
     // Constructor initialises the state of the driver
-    public DashboardPage() {
-        // Initialise the web elements
+    public DashboardPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public String title() {
+    public String getPageTitle() {
         return driver.getTitle();
     }
 

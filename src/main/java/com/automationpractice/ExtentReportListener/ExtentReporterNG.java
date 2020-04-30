@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ExtentReporterNG implements IReporter {
+
     private ExtentReports extent;
 
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,

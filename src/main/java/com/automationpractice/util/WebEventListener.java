@@ -8,7 +8,7 @@ package com.automationpractice.util;
  as an when the action done (click, findBy etc).
  */
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -17,10 +17,10 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import java.io.IOException;
 
-public class WebEventListener extends TestBase implements WebDriverEventListener {
+public class WebEventListener extends BaseTest implements WebDriverEventListener {
 
     public void beforeNavigateTo(String url, WebDriver driver) {
-        System.out.println("Before navigating to: '" + url + "'");
+//        System.out.println("Before navigating to: '" + url + "'");
     }
 
     public void afterNavigateTo(String url, WebDriver driver) {
@@ -62,7 +62,7 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
     public void onException(Throwable error, WebDriver driver) {
         System.out.println("Exception occured: " + error);
         try {
-            TestUtil.takeScreenshotAtEndOfTest();
+            TestUtil.takeScreenshotAtEndOfTest(driver);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -9,5 +9,8 @@
         <module name="br.com.minerva.automation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="br.com.minerva.automation" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
