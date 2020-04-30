@@ -1,6 +1,12 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
+import org.openqa.selenium.WebDriver;
 
-public class SearchPage extends TestBase {
+public class SearchPage extends BasePage {
+
+    public SearchPage(WebDriver driver) {
+        super(driver);
+    }
+
 }

@@ -1,20 +1,14 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends TestBase {
-
-    // Define web elements at class level
-
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/h1[1]")
-    // In a second call of the element, looks for it in the cache instead of trying to find it again
-    @CacheLookup
-    private WebElement pageHeading;
+public class LoginPage extends BasePage {
 
     @FindBy(id="email")
     @CacheLookup
@@ -44,18 +38,10 @@ public class LoginPage extends TestBase {
     @CacheLookup
     private WebElement pageLogo;
 
-    // Constructor
-    public LoginPage() {
-        // Initialises the web elements
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
-    }
-
-    public String getPageHeading() {
-        return pageHeading.getText();
-    }
-
-    public String getPageTitle() {
-        return driver.getTitle();
     }
 
     public boolean isLogoDisplayed() {
@@ -76,12 +62,12 @@ public class LoginPage extends TestBase {
 
     public CreateAccountPage clickCreateAccount() {
         createAccButton.click();
-        return new CreateAccountPage();
+        return new CreateAccountPage(driver);
     }
 
     public DashboardPage clickSignIn() {
         loginButton.click();
-        return new DashboardPage();
+        return new DashboardPage(driver);
     }
 
     public void clickForgotPassword() {
@@ -109,13 +95,13 @@ public class LoginPage extends TestBase {
         setLoginEmail(email);
         setLoginPassword(password);
         clickSignIn();
-        return new DashboardPage();
+        return new DashboardPage(driver);
     }
 
     public CreateAccountPage createAccount(String newEmail) {
         setNewAccountEmail(newEmail);
         clickCreateAccount();
-        return new CreateAccountPage();
+        return new CreateAccountPage(driver);
     }
 
 }

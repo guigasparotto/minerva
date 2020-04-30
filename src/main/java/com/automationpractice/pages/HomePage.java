@@ -1,12 +1,13 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends TestBase {
+public class HomePage extends BasePage {
 
     @FindBy(xpath = "//img[@class='img-responsive']")
     WebElement banner;
@@ -35,55 +36,47 @@ public class HomePage extends TestBase {
     @FindBy(xpath = "//a[@title='Tops']")
     WebElement topsLink;
 
-    @FindBy(xpath = "//body[@id='index']/div[@id='page']/div[@class='header-container']" +
-            "/header[@id='header']/div/div[@class='container']/div[@class='row']/div[@id='block_top_menu']" +
-            "/ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li[2]/a[1]")
+    @FindBy(css = "#block_top_menu > ul > li:nth-child(2) > a")
     WebElement dressesLink;
 
-    @FindBy(xpath = "//body[@id='index']/div[@id='page']/div[@class='header-container']" +
-            "/header[@id='header']/div/div[@class='container']/div[@class='row']/div[@id='block_top_menu']" +
-            "/ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li[3]/a[1]")
+    @FindBy(css = "#block_top_menu > ul > li:nth-child(3) > a")
     WebElement tshirtsLink;
 
-    public HomePage() {
-        // Initialises the web elements
+    public HomePage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
-    }
-
-    public String getHomePageTitle() {
-        return driver.getTitle();
     }
 
     // Clicks in the Sign In button and navigates to the login page
     public LoginPage clickSignInLink() {
         signInLink.click();
-        return new LoginPage();
+        return new LoginPage(driver);
     }
 
     public SearchPage testSearch(String searchItem) {
         searchField.sendKeys(searchItem);
         submitSearch.click();
-        return new SearchPage();
+        return new SearchPage(driver);
     }
 
     public ContactUsPage clickOnContactUsLink() {
         contactUsLink.click();
-        return new ContactUsPage();
+        return new ContactUsPage(driver);
     }
 
     public WomenPage clickOnWomenLink() {
         womenLink.click();
-        return new WomenPage();
+        return new WomenPage(driver);
     }
 
     public DressesPage clickOnDressesLink() {
         dressesLink.click();
-        return new DressesPage();
+        return new DressesPage(driver);
     }
 
     public TshirtsPage clickOnTshirtsLink() {
         tshirtsLink.click();
-        return new TshirtsPage();
+        return new TshirtsPage(driver);
     }
 
     public void clickOnTopsLink() {

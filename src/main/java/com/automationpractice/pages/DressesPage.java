@@ -1,6 +1,12 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
+import org.openqa.selenium.WebDriver;
 
-public class DressesPage extends TestBase {
+public class DressesPage extends BasePage {
+
+    public DressesPage(WebDriver driver) {
+        super(driver);
+    }
+
 }

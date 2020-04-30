@@ -1,6 +1,6 @@
 package cucumber.runner;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BaseTest;
 import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
@@ -15,7 +15,7 @@ import cucumber.api.java.en.When;
 
 import static org.testng.Assert.assertEquals;
 
-public class LoginSteps extends TestBase {
+public class LoginSteps extends BaseTest {
 
     private HomePage homePage;
     private LoginPage loginPage;
@@ -25,12 +25,11 @@ public class LoginSteps extends TestBase {
     @Before("@Login")
     public void SetUp() {
         initialisation();
-        homePage = new HomePage();
+        homePage = new HomePage(driver);
         loginPage = homePage.clickSignInLink();
     }
 
     @After("@Login")
-    // Runs after every test method in the class
     public void tearDown() {
         if (driver != null)
             driver.quit();

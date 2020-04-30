@@ -1,6 +1,6 @@
 package cucumber.runner;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BaseTest;
 import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
@@ -17,7 +17,7 @@ import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
-public class AccountCreationSteps extends TestBase {
+public class AccountCreationSteps extends BaseTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
@@ -30,7 +30,7 @@ public class AccountCreationSteps extends TestBase {
     @Before("@AccountCreation")
     public void SetUp() {
         initialisation();
-        homePage = new HomePage();
+        homePage = new HomePage(driver);
         loginPage = homePage.clickSignInLink();
 
         userEmail = TestUtil.createRandomEmail();
@@ -38,7 +38,6 @@ public class AccountCreationSteps extends TestBase {
     }
 
     @After("@AccountCreation")
-    // Runs after every test method in the class
     public void tearDown() {
         userEmail = null;
 
@@ -57,13 +56,24 @@ public class AccountCreationSteps extends TestBase {
         createAccountPage.enterPersonalInformation(TestUtil.getSheetRow(sheetName, row));
     }
 
+    @When("^user enters the required personal information$")
+    public void userEntersTheirPersonalInformation(List<String> personalInformation) {
+        String firstName = personalInformation.get(0);
+        String lastName = personalInformation.get(1);
+        String password = personalInformation.get(2);
+
+        createAccountPage.enterRequiredPersonalInformation(firstName, lastName, password);
+    }
+
     @When("^user enters their address information$")
     public void user_enters_their_address_information(DataTable addressInformation) {
         List<List<String>> data = addressInformation.raw();
 
-        createAccountPage.enterAddressInformation(data.get(1).get(1), data.get(2).get(1), data.get(3).get(1), data.get(4).get(1),
-                data.get(5).get(1), data.get(6).get(1), data.get(7).get(1), data.get(8).get(1), data.get(9).get(1), data.get(10).get(1),
-                data.get(11).get(1), data.get(12).get(1), data.get(13).get(1));
+        createAccountPage.enterAddressInformation(
+                data.get(1).get(1), data.get(2).get(1), data.get(3).get(1), data.get(4).get(1),
+                data.get(5).get(1), data.get(6).get(1), data.get(7).get(1), data.get(8).get(1),
+                data.get(9).get(1), data.get(10).get(1), data.get(11).get(1), data.get(12).get(1),
+                data.get(13).get(1));
     }
 
     @When("^user clicks in the register button$")
@@ -75,6 +85,5 @@ public class AccountCreationSteps extends TestBase {
     public void registration_is_complete() {
         assertEquals(dashboardPage.getPageHeading(), "My account");
     }
-
 
 }

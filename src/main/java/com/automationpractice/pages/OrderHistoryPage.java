@@ -1,4 +1,12 @@
 package com.automationpractice.pages;
 
-public class OrderHistoryPage {
+import com.automationpractice.BasePage;
+import org.openqa.selenium.WebDriver;
+
+public class OrderHistoryPage extends BasePage {
+
+    public OrderHistoryPage(WebDriver driver) {
+        super(driver);
+    }
+
 }

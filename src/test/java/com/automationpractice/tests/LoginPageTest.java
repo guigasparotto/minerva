@@ -1,6 +1,6 @@
 package com.automationpractice.tests;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BaseTest;
 import com.automationpractice.pages.CreateAccountPage;
 import com.automationpractice.pages.DashboardPage;
 import com.automationpractice.pages.HomePage;
@@ -15,7 +15,7 @@ import static com.automationpractice.constants.UserCredentialsConstants.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class LoginPageTest extends TestBase {
+public class LoginPageTest extends BaseTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
@@ -29,9 +29,9 @@ public class LoginPageTest extends TestBase {
     }
 
     @BeforeMethod
-    public void SetUp() {
+    public void setUp() {
         initialisation();
-        homePage = new HomePage();
+        homePage = new HomePage(driver);
         loginPage = homePage.clickSignInLink();
     }
 
@@ -85,7 +85,7 @@ public class LoginPageTest extends TestBase {
 
     @DataProvider
     public Object[][] getTestData() {
-        Object data[][] = TestUtil.getTestData(sheetName);
+        Object[][] data = TestUtil.getTestData(sheetName);
         return data;
     }
 

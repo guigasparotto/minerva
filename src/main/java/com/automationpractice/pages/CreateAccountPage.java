@@ -1,7 +1,8 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
 import com.automationpractice.enums.Title;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.Map;
 
-public class CreateAccountPage extends TestBase {
+public class CreateAccountPage extends BasePage {
 
     @FindBy(xpath = "//h1[contains(text(),'Create an account')]")
     private WebElement pageHeading;
@@ -92,12 +93,12 @@ public class CreateAccountPage extends TestBase {
     @FindBy(id="alias")
     private WebElement addressAliasField;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/form[1]/div[4]/button[1]/span[1]")
+    @FindBy(css = "#submitAccount")
     private WebElement registerButton;
 
     // Constructor
-    public CreateAccountPage() {
-        // Initialises the web elements
+    public CreateAccountPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -245,21 +246,36 @@ public class CreateAccountPage extends TestBase {
 
     public DashboardPage clickRegisterButton() {
         registerButton.click();
-        return new DashboardPage();
+        return new DashboardPage(driver);
     }
 
 
-    public void enterPersonalInformation(Title title, String firstName, String lastName, String password,
-                                        int birthDay, int birthMonth, int birthYear, boolean receiveNewsletter, boolean receiveOffers) {
+    public void enterRequiredPersonalInformation(String firstName, String lastName, String password) {
+        setFirstName(firstName);
+        setlastName(lastName);
+        setPassword(password);
+    }
+
+
+    public void enterPersonalInformation(
+            Title title,
+            String firstName,
+            String lastName,
+            String password,
+            int birthDay,
+            int birthMonth,
+            int birthYear,
+            boolean receiveNewsletter,
+            boolean receiveOffers)
+    {
         if(title == Title.MR) {
             setGenderMale();
         } else if(title == Title.MRS){
             setGenderFemale();
         }
 
-        setFirstName(firstName);
-        setlastName(lastName);
-        setPassword(password);
+        enterRequiredPersonalInformation(firstName, lastName, password);
+
         setBirthDay(birthDay);
         setBirthMonth(birthMonth);
         setBirthYear(birthYear);
@@ -298,9 +314,21 @@ public class CreateAccountPage extends TestBase {
         }
     }
 
-    public void enterAddressInformation(String firstName, String lastName, String company, String address, String addressComp,
-                                        String city, String state, String postalCode, String country, String additionalInfo,
-                                        String homePhone, String mobile, String addressAlias) {
+    public void enterAddressInformation(
+            String firstName,
+            String lastName,
+            String company,
+            String address,
+            String addressComp,
+            String city,
+            String state,
+            String postalCode,
+            String country,
+            String additionalInfo,
+            String homePhone,
+            String mobile,
+            String addressAlias)
+    {
         setAddressFirstName(firstName);
         setAddressLastName(lastName);
         setCompanyField(company);

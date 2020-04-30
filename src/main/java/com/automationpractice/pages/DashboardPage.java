@@ -1,11 +1,12 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.base.TestBase;
+import com.automationpractice.BasePage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DashboardPage extends TestBase {
+public class DashboardPage extends BasePage {
 
     @FindBy(xpath = "//span[contains(text(),'My account')]")
     private WebElement pageHeading;
@@ -34,9 +35,11 @@ public class DashboardPage extends TestBase {
     @FindBy(xpath = "//p[@class='info-account']")
     private WebElement welcomeText;
 
+    private WebDriver driver;
+
     // Constructor initialises the state of the driver
-    public DashboardPage() {
-        // Initialise the web elements
+    public DashboardPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

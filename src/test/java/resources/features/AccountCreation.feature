@@ -30,9 +30,8 @@ Feature: Account Creation
    @AccountCreation
    Scenario: Create an account with required fields only
      Given user is on create an account page
-     When user enters their personal information
-       | title | firstName | lastName  | password  | birthDay  | birthMonth  | birthYear | newsletters | offers  |
-       |       | John      | Doe       | 123456    |           |             |           |             |         |
+     When user enters the required personal information
+       | John      | Doe       | 123456    |
      And user enters their address information
        | Fields      | Values        |
        | firstName   | John          |

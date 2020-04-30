@@ -1,6 +1,5 @@
 package com.automationpractice.util;
 
-import com.automationpractice.base.TestBase;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -8,17 +7,20 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
-public class TestUtil extends TestBase {
+public class TestUtil {
 
     public static long PAGE_LOAD_TIMEOUT = 20;
-    public static long IMPLICIT_WAIT = 10;
+    public static long IMPLICIT_WAIT = 3;
 
     public static String TESTDATA_SHEET_PATH = "/Users/guigasparotto/Documents/selenium_webdriver/minerva/" +
             "src/main/java/com/automationpractice/testdata/testData.xlsx";
@@ -89,7 +91,7 @@ public class TestUtil extends TestBase {
         return data;
     }
 
-    public static void takeScreenshotAtEndOfTest() throws IOException {
+    public static void takeScreenshotAtEndOfTest(WebDriver driver) throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String currentDir = System.getProperty("user.dir");
 

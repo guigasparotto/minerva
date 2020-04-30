@@ -1,4 +1,12 @@
 package com.automationpractice.pages;
 
-public class CreditSlipsPage {
+import com.automationpractice.BasePage;
+import org.openqa.selenium.WebDriver;
+
+public class CreditSlipsPage extends BasePage {
+
+    public CreditSlipsPage(WebDriver driver) {
+        super(driver);
+    }
+
 }
