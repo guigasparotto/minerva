@@ -14,12 +14,12 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    public static WebDriver driver;
-    public static Properties prop;
+    protected static WebDriver driver;
+    protected static Properties prop;
 
     // Elements created in order to implement better logging
-    public static EventFiringWebDriver e_driver;
-    public static WebEventListener eventListener;
+    protected static EventFiringWebDriver e_driver;
+    protected static WebEventListener eventListener;
 
     public BaseTest() {
         try {
@@ -34,7 +34,7 @@ public class BaseTest {
         }
     }
 
-    public static void initialisation() {
+    protected static void initialisation() {
         String browserName = prop.getProperty("browser");
         driver = DriverFactory.open(browserName);
 

@@ -96,7 +96,6 @@ public class CreateAccountPage extends BasePage {
     @FindBy(css = "#submitAccount")
     private WebElement registerButton;
 
-    // Constructor
     public CreateAccountPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -198,7 +197,7 @@ public class CreateAccountPage extends BasePage {
         addressField.sendKeys(address);
     }
 
-    public void setAddressCompField(String complement) {
+    public void setAddressComplementField(String complement) {
         if (complement != null) {
             addressCompField.sendKeys(complement);
 
@@ -333,7 +332,7 @@ public class CreateAccountPage extends BasePage {
         setAddressLastName(lastName);
         setCompanyField(company);
         setAddressField(address);
-        setAddressCompField(addressComp);
+        setAddressComplementField(addressComp);
         setCityField(city);
         setStateDropDown(state);
         setPostalCodeField(postalCode);

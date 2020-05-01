@@ -62,14 +62,14 @@ public class LoginSteps extends BaseTest {
 
     @Then("^welcome message is displayed$")
     public void welcome_message_is_displayed() {
-        assertEquals(dashboardPage.welcomeMessage(), "Welcome to your account. " +
+        assertEquals(dashboardPage.getWelcomeMessage(), "Welcome to your account. " +
                 "Here you can manage all of your personal information and orders.");
     }
 
     @Then("^invalid password message is displayed$")
     public void invalid_password_message_is_displayed() {
-        assertEquals(loginPage.errorAlert(), "There is 1 error");
-        assertEquals(loginPage.authenticationFailedMsg(), "Authentication failed.");
+        assertEquals(loginPage.getErrorAlert(), "There is 1 error");
+        assertEquals(loginPage.getAuthenticationFailedMsg(), "Authentication failed.");
     }
 
     @When("^user enters a new email in the email address field$")
@@ -79,7 +79,7 @@ public class LoginSteps extends BaseTest {
 
     @When("^user clicks in the create an account button$")
     public void user_clicks_in_the_create_an_account_button() {
-        createAccountPage = loginPage.clickCreateAccount();
+        createAccountPage = loginPage.clickCreateAccountButton();
     }
 
     @Then("^create an account page is loaded$")
@@ -89,11 +89,11 @@ public class LoginSteps extends BaseTest {
 
     @Then("^empty email message is displayed$")
     public void empty_email_message_is_displayed() {
-        assertEquals(loginPage.emptyEmailMsg(), "An email address required.");
+        assertEquals(loginPage.getEmptyEmailMsg(), "An email address required.");
     }
 
     @Then("^empty password message is displayed$")
     public void emptyPasswordMessageIsDisplayed() {
-        assertEquals(loginPage.emptyPasswordMsg(), "Password is required.");
+        assertEquals(loginPage.getEmptyPasswordMsg(), "Password is required.");
     }
 }

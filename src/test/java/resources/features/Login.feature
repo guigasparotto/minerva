@@ -26,7 +26,6 @@ Feature: Login
     Examples:
       | username           | password |
       | gdadald3@gmail.com | 123455   |
-      |                    |          |
 
   @Login
   Scenario Outline: Login with empty email

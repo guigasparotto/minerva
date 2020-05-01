@@ -25,7 +25,7 @@ public class HomePage extends BasePage {
     WebElement searchField;
 
     @FindBy(name = "submit_search")
-    WebElement submitSearch;
+    WebElement submitSearchButton;
 
     @FindBy(xpath = "//a[@title='View my shopping cart']")
     WebElement shoppingCartLink;
@@ -53,33 +53,33 @@ public class HomePage extends BasePage {
         return new LoginPage(driver);
     }
 
-    public SearchPage testSearch(String searchItem) {
+    public SearchPage searchText(String searchItem) {
         searchField.sendKeys(searchItem);
-        submitSearch.click();
+        submitSearchButton.click();
         return new SearchPage(driver);
     }
 
-    public ContactUsPage clickOnContactUsLink() {
+    public ContactUsPage clickContactUsLink() {
         contactUsLink.click();
         return new ContactUsPage(driver);
     }
 
-    public WomenPage clickOnWomenLink() {
+    public WomenPage clickWomenLink() {
         womenLink.click();
         return new WomenPage(driver);
     }
 
-    public DressesPage clickOnDressesLink() {
+    public DressesPage clickDressesLink() {
         dressesLink.click();
         return new DressesPage(driver);
     }
 
-    public TshirtsPage clickOnTshirtsLink() {
+    public TshirtsPage clickTshirtsLink() {
         tshirtsLink.click();
         return new TshirtsPage(driver);
     }
 
-    public void clickOnTopsLink() {
+    public void clickTopsLink() {
         Actions action = new Actions(driver);
         action.moveToElement(womenLink).build().perform();
         topsLink.click();

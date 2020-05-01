@@ -38,7 +38,6 @@ public class LoginPage extends BasePage {
     @CacheLookup
     private WebElement pageLogo;
 
-
     public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -60,7 +59,7 @@ public class LoginPage extends BasePage {
         newAccountEmail.sendKeys(email);
     }
 
-    public CreateAccountPage clickCreateAccount() {
+    public CreateAccountPage clickCreateAccountButton() {
         createAccButton.click();
         return new CreateAccountPage(driver);
     }
@@ -70,23 +69,26 @@ public class LoginPage extends BasePage {
         return new DashboardPage(driver);
     }
 
-    public void clickForgotPassword() {
+    public void clickForgotPasswordButton() {
         forgotButton.click();
     }
 
-    public String errorAlert() {
+    public String getErrorAlert() {
         return driver.findElement(By.xpath("//p[contains(text(),'There is 1 error')]")).getText();
     }
 
-    public String authenticationFailedMsg() {
-        return driver.findElement(By.xpath("//li[contains(text(),'Authentication failed.')]")).getText();
+    public String getAuthenticationFailedMsg() {
+        String message = wait.until(x ->
+                x.findElement(By.xpath("//li[contains(text(),'Authentication failed.')]")).getText());
+
+        return message;
     }
 
-    public String emptyEmailMsg() {
+    public String getEmptyEmailMsg() {
         return driver.findElement(By.xpath("//li[contains(text(),'An email address required.')]")).getText();
     }
 
-    public String emptyPasswordMsg() {
+    public String getEmptyPasswordMsg() {
         return driver.findElement(By.xpath("//li[contains(text(),'Password is required.')]")).getText();
     }
 
@@ -100,7 +102,7 @@ public class LoginPage extends BasePage {
 
     public CreateAccountPage createAccount(String newEmail) {
         setNewAccountEmail(newEmail);
-        clickCreateAccount();
+        clickCreateAccountButton();
         return new CreateAccountPage(driver);
     }
 

@@ -52,7 +52,7 @@ public class LoginPageTest extends BaseTest {
     public void loginSuccessfulTest() {
         dashboardPage = loginPage.doLogin(USERNAME_VALID, PASSWORD_VALID);
 
-        assertEquals(dashboardPage.welcomeMessage(), "Welcome to your account. " +
+        assertEquals(dashboardPage.getWelcomeMessage(), "Welcome to your account. " +
                 "Here you can manage all of your personal information and orders.");
     }
 
@@ -60,8 +60,8 @@ public class LoginPageTest extends BaseTest {
     public void loginFailedInvalidEmailTest() {
         loginPage.doLogin(USERNAME_INVALID, PASSWORD_VALID);
 
-        assertTrue(loginPage.errorAlert().contains("There is 1 error"));
-        assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
+        assertTrue(loginPage.getErrorAlert().contains("There is 1 error"));
+        assertTrue(loginPage.getAuthenticationFailedMsg().contains("Authentication failed."));
         assertTrue(loginPage.getPageTitle().contains("Login - My Store"));
     }
 
@@ -69,8 +69,8 @@ public class LoginPageTest extends BaseTest {
     public void loginFailedInvalidPasswordTest() {
         loginPage.doLogin(USERNAME_VALID, PASSWORD_INVALID);
 
-        assertTrue(loginPage.errorAlert().contains("There is 1 error"));
-        assertTrue(loginPage.authenticationFailedMsg().contains("Authentication failed."));
+        assertTrue(loginPage.getErrorAlert().contains("There is 1 error"));
+        assertTrue(loginPage.getAuthenticationFailedMsg().contains("Authentication failed."));
         assertTrue(loginPage.getPageTitle().contains("Login - My Store"));
     }
 
@@ -78,7 +78,7 @@ public class LoginPageTest extends BaseTest {
     // Failing - gets heading from previous page
     public void navigateToCreateAccountPageTest() {
         loginPage.setNewAccountEmail(TestUtil.createRandomEmail());
-        createAccountPage = loginPage.clickCreateAccount();
+        createAccountPage = loginPage.clickCreateAccountButton();
     }
 
 
@@ -93,7 +93,7 @@ public class LoginPageTest extends BaseTest {
     public void loginSuccessfulTestWithDataProvider(String email, String password) {
         dashboardPage = loginPage.doLogin(email, password);
 
-        assertEquals(dashboardPage.welcomeMessage(), "Welcome to your account. " +
+        assertEquals(dashboardPage.getWelcomeMessage(), "Welcome to your account. " +
                 "Here you can manage all of your personal information and orders.");
     }
 

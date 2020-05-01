@@ -35,9 +35,6 @@ public class DashboardPage extends BasePage {
     @FindBy(xpath = "//p[@class='info-account']")
     private WebElement welcomeText;
 
-    private WebDriver driver;
-
-    // Constructor initialises the state of the driver
     public DashboardPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -47,35 +44,35 @@ public class DashboardPage extends BasePage {
         return driver.getTitle();
     }
 
-    public void orderHistory() {
+    public void clickOrderHistoryButton() {
         historyButton.click();
     }
 
-    public void myCreditSlips() {
+    public void clickMyCreditSlipsButton() {
         creditSlipsButton.click();
     }
 
-    public void myAdresses() {
+    public void clickMyAdressesButton() {
         addressesButton.click();
     }
 
-    public void myPersonalInfo() {
+    public void clickMyPersonalInfoButton() {
         personalInfoButton.click();
     }
 
-    public void myWishlists() {
+    public void clickMyWishlistsButton() {
         wishlistsButton.click();
     }
 
-    public void home() {
+    public void clickHomeButton() {
         homeButton.click();
     }
 
-    public String myAccount() {
+    public String getMyAccountText() {
         return myAccountText.getText();
     }
 
-    public String welcomeMessage() {
+    public String getWelcomeMessage() {
         return welcomeText.getText();
     }
 
